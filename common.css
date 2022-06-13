@@ -156,12 +156,15 @@
     margin-bottom: 24px;
   }
   .section-title {
-    font-size: var(--font-md-3);
+    font-size: var(--font-md-2-5);
     margin-bottom: 16px;
   }
   .btn {
     padding: 4px 10px;
     font-size: var(--font-2xs);
+  }
+  .btn-border {
+    border: 0;
   }
   .badge {
     font-size: var(--font-3xs);

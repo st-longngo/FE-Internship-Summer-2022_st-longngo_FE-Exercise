@@ -2,7 +2,7 @@
   --primary-color: #fbb03b;
   --secondary-color: #ebe2e2;
   --white: #fff;
-  --text-color: #333;
+  --text-color: #333333;
   --placeholder-color: #ababab;
   --gray: #808080;
   --gray-2: #cecece;
@@ -17,6 +17,7 @@
   --font-sm: 13px;
   --font-md: 14px;
   --font-md-2: 16px;
+  --font-md-2-5: 18px;
   --font-md-3: 20px;
   --font-lg: 24px;
   --font-xl: 32px;
@@ -76,7 +77,11 @@ body {
 
 .logo a {
   display: flex;
-  align-items: center;
+}
+
+.logo a img {
+  filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%)
+    hue-rotate(245deg) brightness(121%) contrast(97%);
 }
 
 .nav-menu {
@@ -102,6 +107,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.extra-icon {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(219deg) brightness(106%) contrast(104%);
+}
+
 #hambuger {
   display: none;
 }
@@ -249,16 +260,13 @@ body {
 }
 
 .about-item-1 {
-  background: url("./images/Fashion\ -\ home-image5\ 1.png") no-repeat
-    center/cover;
+  background: url("./images/Fashion-home-image-5.png") no-repeat center/cover;
 }
 .about-item-2 {
-  background: url("./images/Fashion\ -\ home-image6\ 1.png") no-repeat
-    center/cover;
+  background: url("./images/Fashion-home-image-6.png") no-repeat center/cover;
 }
 .about-item-3 {
-  background: url("./images/Fashion\ -\ home-image7\ 1.png") no-repeat
-    center/cover;
+  background: url("./images/Fashion-home-image-7.png") no-repeat center/cover;
 }
 
 .about-content {
@@ -406,8 +414,7 @@ body {
   align-items: center;
   min-height: 240px;
   margin-bottom: 0;
-  background: url(./images/Fashion\ -\ home-image8\ 1.png) no-repeat
-    center/cover;
+  background: url(./images/Fashion-home-image-8.png) no-repeat center/cover;
 }
 
 .section-contact::after {
@@ -544,22 +551,17 @@ body {
     color: var(--text-color);
     font-size: var(--font-md-2);
   }
-  .logo a svg > path {
-    fill: var(--text-color);
+  .logo a img {
+    width: 128px;
+    height: 32px;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+      hue-rotate(35deg) brightness(90%) contrast(90%);
   }
-  .logo a svg {
-    width: 32px;
-    height: 38px;
-  }
-  .logo a span {
-    margin-left: 16px;
-  }
-  .extra-link > svg > path {
-    fill: var(--text-color);
-  }
-  .extra-link > svg {
+  .extra-icon {
     width: 20px;
     height: 20px;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+      hue-rotate(35deg) brightness(90%) contrast(90%);
   }
   #search {
     display: none;
@@ -572,7 +574,7 @@ body {
   }
   .section-banner.section {
     height: 740px;
-    background-image: url(./images/Fashion\ -\ home-image9\ 2.png);
+    background-image: url(./images/Fashion-home-image-9.png);
   }
   .container.banner-inner {
     padding-left: 24px;
