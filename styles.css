@@ -1,6 +1,6 @@
 :root {
   --primary-color: #fbb03b;
-  --secondary-color: #ff0000;
+  --secondary-color: #ebe2e2;
   --white: #fff;
   --text-color: #333;
   --placeholder-color: #ababab;
@@ -63,8 +63,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  padding: 50px 0;
   z-index: 10;
+  padding: 50px 0;
 }
 
 .header-inner {
@@ -75,14 +75,8 @@ body {
 }
 
 .logo a {
-  font-size: 19px;
   display: flex;
   align-items: center;
-  color: var(--white);
-}
-
-.logo a span {
-  margin-left: 22px;
 }
 
 .nav-menu {
@@ -114,19 +108,14 @@ body {
 
 /* BANNER */
 .section-banner.section {
-  background: url(./images/Fashion-home-image.png) no-repeat center/cover;
-  height: 800px;
   position: relative;
   width: 100%;
+  height: 800px;
   padding: 0;
+  background: url(./images/Fashion-home-image.png) no-repeat center/cover;
 }
 
 .overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.8) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
   position: absolute;
   top: 0;
   left: 0;
@@ -134,13 +123,18 @@ body {
   height: 100%;
   width: 100%;
   z-index: 2;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 .container.banner-inner {
-  z-index: 3;
   position: relative;
   height: 100%;
   width: 100%;
+  z-index: 3;
   padding-left: 111px;
 }
 
@@ -153,11 +147,11 @@ body {
 }
 
 .banner-title {
+  max-width: 403px;
+  margin-bottom: 24px;
   font-size: var(--font-2xl);
   color: var(--white);
-  max-width: 403px;
   line-height: 1;
-  margin-bottom: 24px;
 }
 
 .banner-title span {
@@ -176,15 +170,15 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background-color: var(--primary-color);
   margin-right: 21px;
+  background-color: var(--primary-color);
 }
 
 .content-link-text {
-  text-transform: uppercase;
   color: var(--white);
   font-size: var(--font-lg);
   font-weight: 700;
+  text-transform: uppercase;
   text-decoration: underline;
 }
 
@@ -193,15 +187,15 @@ body {
   bottom: 0;
   left: 0;
   right: 0;
-  width: 76%;
   z-index: 3;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background-color: var(--white);
+  max-width: 1326px;
+  width: 76%;
   border-top-right-radius: 70px;
   padding: 38px 88px 24px 0;
-  max-width: 1326px;
+  background-color: var(--white);
 }
 
 .policy-list {
@@ -220,20 +214,20 @@ body {
 }
 
 .policy-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 10px;
-  background-color: var(--orange);
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   margin-right: 21px;
+  background-color: var(--orange);
 }
 
 .policy-desc {
+  margin-top: 5px;
   font-size: 12px;
   color: var(--gray-4);
-  margin-top: 5px;
 }
 
 /* ABOUT */
@@ -244,14 +238,14 @@ body {
 
 .about::after {
   content: "";
-  background: #333333;
-  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  background: #333333;
+  opacity: 0.5;
 }
 
 .about-item-1 {
@@ -282,11 +276,11 @@ body {
 }
 
 .about-title {
+  min-height: 73px;
+  margin-bottom: 50px;
   color: var(--white);
   font-size: var(--font-lg);
   font-weight: 400;
-  margin-bottom: 50px;
-  min-height: 73px;
 }
 
 .about-badge {
@@ -317,15 +311,15 @@ body {
 }
 
 .product-link {
+  display: block;
   height: 100%;
   width: 100%;
-  display: block;
 }
 
 .product-link img {
+  display: block;
   height: 100%;
   width: 100%;
-  display: block;
 }
 
 .product-content {
@@ -366,8 +360,8 @@ body {
 
 /* CHOOSE US */
 .section-chooseus {
-  background-color: var(--section-bg);
   padding: 48px 0;
+  background-color: var(--section-bg);
 }
 
 .chooseus {
@@ -376,14 +370,14 @@ body {
 }
 
 .chooseus-thumnail {
-  width: 68px;
-  height: 68px;
-  background-color: var(--white);
-  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 68px;
+  height: 68px;
   margin-bottom: 46px;
+  border-radius: 10px;
+  background-color: var(--white);
 }
 
 .chooseus-content {
@@ -391,9 +385,9 @@ body {
 }
 
 .chooseus-title {
+  margin-bottom: 16px;
   text-transform: capitalize;
   font-size: var(--font-md-2);
-  margin-bottom: 16px;
 }
 
 .chooseus-desc {
@@ -407,13 +401,13 @@ body {
 
 /* CONTACT */
 .section-contact.section {
-  background: url(./images/Fashion\ -\ home-image8\ 1.png) no-repeat
-    center/cover;
-  min-height: 240px;
   position: relative;
   display: flex;
   align-items: center;
+  min-height: 240px;
   margin-bottom: 0;
+  background: url(./images/Fashion\ -\ home-image8\ 1.png) no-repeat
+    center/cover;
 }
 
 .section-contact::after {
@@ -429,9 +423,9 @@ body {
 }
 
 .contact-inner {
-  z-index: 3;
   display: flex;
   align-items: center;
+  z-index: 3;
 }
 
 .contact-title {
@@ -453,8 +447,8 @@ body {
 
 .form-input {
   flex: 1;
-  border-radius: 50px;
   padding: 14px 24px;
+  border-radius: 50px;
   font-size: var(--font-sm);
   color: var(--text-color);
 }
@@ -482,10 +476,10 @@ body {
 }
 
 .footer-iso-desc {
-  color: var(--white);
   max-width: 374px;
   margin-top: 24px;
   margin-bottom: 56px;
+  color: var(--white);
 }
 
 .footer-iso-social {
@@ -494,8 +488,8 @@ body {
 }
 
 .iso-social-link {
-  color: var(--white);
   font-size: 18px;
+  color: var(--white);
 }
 
 .footer-menu {
@@ -542,9 +536,9 @@ body {
     margin-bottom: 16px;
   }
   .header {
-    background-color: #fff;
-    padding: 20px 0;
     position: fixed;
+    padding: 20px 0;
+    background-color: #fff;
   }
   .logo a {
     color: var(--text-color);
@@ -600,10 +594,10 @@ body {
     padding: 16px;
   }
   .about-title {
-    font-size: var(--font-md);
-    margin-bottom: 8px;
-    min-height: 40px;
     max-width: 120px;
+    min-height: 40px;
+    margin-bottom: 8px;
+    font-size: var(--font-md);
   }
   .product {
     margin-bottom: 12px;
@@ -654,10 +648,10 @@ body {
     flex-direction: column;
   }
   .contact-title {
-    font-size: var(--font-md);
     max-width: 200px;
-    line-height: 21px;
     margin-bottom: 24px;
+    font-size: var(--font-md);
+    line-height: 21px;
   }
   .footer-top {
     padding: 24px 19px;

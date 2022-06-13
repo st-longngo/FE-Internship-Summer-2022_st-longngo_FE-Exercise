@@ -1,8 +1,8 @@
 .container {
   max-width: 1200px;
+  width: 100%;
   padding: 0 24px;
   margin: 0 auto;
-  width: 100%;
 }
 
 .row {
@@ -59,21 +59,21 @@
 }
 
 .section-title {
+  margin-bottom: 40px;
   font-size: var(--font-xl);
   font-weight: 300;
   text-align: center;
   text-transform: capitalize;
-  margin-bottom: 40px;
 }
 
 .btn {
+  display: inline-block;
   padding: 14px 20px;
   border-radius: 50px;
   font-weight: 700;
   font-size: var(--font-sm);
-  text-transform: uppercase;
-  display: inline-block;
   color: var(--text-color);
+  text-transform: uppercase;
 }
 
 .btn.btn-primary {
