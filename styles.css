@@ -40,9 +40,14 @@ ul {
 }
 
 button,
-input {
+input,
+select,
+optgroup,
+textarea {
   outline: 0;
   border: 0;
+  font-family: var(--font-family-primary);
+  color: var(--text-color);
 }
 
 body {
@@ -52,120 +57,6 @@ body {
   overflow-x: hidden;
 }
 
-.container {
-  max-width: 1170px;
-  padding: 0 15px;
-  margin: 0 auto;
-  width: 100%;
-  position: relative;
-}
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: -10px;
-  margin-right: -10px;
-}
-
-.col-1 {
-  width: 8.33333333333%;
-}
-.col-2 {
-  width: 16.6666666667%;
-}
-.col-3 {
-  width: 25%;
-}
-.col-4 {
-  width: 33.3333333333%;
-}
-.col-5 {
-  width: 41.6666666667%;
-}
-.col-6 {
-  width: 50%;
-}
-.col-7 {
-  width: 58.3333333333%;
-}
-.col-8 {
-  width: 66.6666666667%;
-}
-.col-9 {
-  width: 75%;
-}
-.col-10 {
-  width: 83.3333333333%;
-}
-.col-11 {
-  width: 91.6777777777%;
-}
-.col-12 {
-  width: 100%;
-}
-.row > [class*="col-"] {
-  flex: 0 0 auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 10px;
-}
-
-.section {
-  padding: 48px 0;
-}
-
-.section-title {
-  font-size: var(--font-xl);
-  font-weight: 300;
-  text-align: center;
-  text-transform: capitalize;
-  margin-bottom: 40px;
-}
-
-.btn {
-  padding: 14px 20px;
-  border-radius: 50px;
-  font-weight: 700;
-  font-size: var(--font-sm);
-  text-transform: uppercase;
-  display: inline-block;
-  color: var(--text-color);
-}
-
-.btn.btn-primary {
-  background-color: var(--white);
-}
-
-.btn.btn-secondary {
-  padding: 14px 30px;
-  background-color: var(--primary-color);
-}
-
-.badge {
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: var(--font-xs);
-}
-
-.badge-primary {
-  background-color: var(--secondary-color);
-  color: var(--white);
-}
-
-.btn-border {
-  background-color: var(--white);
-  border: 1px solid var(--gray-5);
-  color: var(--text-color);
-}
-
-.border-bottom {
-  border-bottom: 1px solid var(--white);
-}
-
-.text-primary {
-  color: var(--primary-color);
-}
 /* CSS HEADER */
 .header {
   position: absolute;
@@ -245,11 +136,12 @@ body {
   z-index: 2;
 }
 
-.banner-inner {
+.container.banner-inner {
   z-index: 3;
   position: relative;
   height: 100%;
   width: 100%;
+  padding-left: 111px;
 }
 
 .banner-content {
@@ -258,7 +150,6 @@ body {
   justify-content: center;
   height: 100%;
   width: 100%;
-  padding-left: 132px;
 }
 
 .banner-title {
@@ -301,20 +192,27 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 76%;
-  background-color: var(--white);
   z-index: 3;
-  border-radius: 0px 70px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: var(--white);
+  border-top-right-radius: 70px;
+  padding: 38px 88px 24px 0;
+  max-width: 1326px;
 }
 
 .policy-list {
   display: flex;
   justify-content: space-between;
-  padding: 38px 88px 24px 240px;
+  gap: 0 48px;
 }
 
 .policy-item {
   display: flex;
+  max-width: 237px;
 }
 
 .policy-content {
@@ -356,15 +254,15 @@ body {
   height: 100%;
 }
 
-.about-item1 {
+.about-item-1 {
   background: url("./images/Fashion\ -\ home-image5\ 1.png") no-repeat
     center/cover;
 }
-.about-item2 {
+.about-item-2 {
   background: url("./images/Fashion\ -\ home-image6\ 1.png") no-repeat
     center/cover;
 }
-.about-item3 {
+.about-item-3 {
   background: url("./images/Fashion\ -\ home-image7\ 1.png") no-repeat
     center/cover;
 }
@@ -400,7 +298,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 34px;
+  margin-bottom: 40px;
 }
 
 .section-header .section-title {
@@ -418,9 +316,16 @@ body {
   width: 100%;
 }
 
+.product-link {
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
 .product-link img {
   height: 100%;
   width: 100%;
+  display: block;
 }
 
 .product-content {
@@ -482,7 +387,7 @@ body {
 }
 
 .chooseus-content {
-  max-width: 240px;
+  max-width: 243px;
 }
 
 .chooseus-title {
@@ -496,14 +401,19 @@ body {
   line-height: 21px;
 }
 
+.chooseus-active {
+  color: var(--primary-color);
+}
+
 /* CONTACT */
-.section-contact {
+.section-contact.section {
   background: url(./images/Fashion\ -\ home-image8\ 1.png) no-repeat
     center/cover;
   min-height: 240px;
   position: relative;
   display: flex;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .section-contact::after {
@@ -563,6 +473,14 @@ body {
   padding: 52px 0;
 }
 
+.footer-iso-logo {
+  display: inline-block;
+}
+
+.footer-iso-logo img {
+  display: block;
+}
+
 .footer-iso-desc {
   color: var(--white);
   max-width: 374px;
@@ -580,6 +498,16 @@ body {
   font-size: 18px;
 }
 
+.footer-menu {
+  display: flex;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
 .footer-sub-list {
   display: flex;
   flex-direction: column;
@@ -589,8 +517,9 @@ body {
   margin-bottom: 20px;
 }
 
-.sub-title {
+.footer-sub-link.sub-title {
   font-weight: 700;
+  font-size: var(--font-md-2);
 }
 
 .footer-sub-link {
@@ -609,67 +538,12 @@ body {
 }
 
 @media only screen and (max-width: 576px) {
-  .row {
-    margin-right: -5px;
-    margin-left: -5px;
-  }
-  .col-sm-1 {
-    width: 8.33333333333%;
-  }
-  .col-sm-2 {
-    width: 16.6666666667%;
-  }
-  .col-sm-3 {
-    width: 25%;
-  }
-  .col-sm-4 {
-    width: 33.3333333333%;
-  }
-  .col-sm-5 {
-    width: 41.6666666667%;
-  }
-  .col-sm-6 {
-    width: 50%;
-  }
-  .col-sm-7 {
-    width: 58.3333333333%;
-  }
-  .col-sm-8 {
-    width: 66.6666666667%;
-  }
-  .col-sm-9 {
-    width: 75%;
-  }
-  .col-sm-10 {
-    width: 83.3333333333%;
-  }
-  .col-sm-11 {
-    width: 91.6777777777%;
-  }
-  .col-sm-12 {
-    width: 100%;
-  }
-  .row > [class*="col-"] {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  .section {
-    padding: 24px 0;
-  }
-  .section-title {
-    font-size: var(--font-md-3);
-  }
-  .btn {
-    padding: 4px 10px;
-    font-size: var(--font-2xs);
-  }
-  .badge {
-    font-size: var(--font-3xs);
-    padding: 4px 6px;
+  .section-header {
+    margin-bottom: 16px;
   }
   .header {
     background-color: #fff;
-    padding: 20px 24px;
+    padding: 20px 0;
     position: fixed;
   }
   .logo a {
@@ -706,7 +580,7 @@ body {
     height: 740px;
     background-image: url(./images/Fashion\ -\ home-image9\ 2.png);
   }
-  .banner-content {
+  .container.banner-inner {
     padding-left: 24px;
   }
   .banner-policy {
@@ -720,6 +594,7 @@ body {
   }
   .about {
     min-height: 225px;
+    margin-top: 8px;
   }
   .about-content {
     padding: 16px;
@@ -728,7 +603,10 @@ body {
     font-size: var(--font-md);
     margin-bottom: 8px;
     min-height: 40px;
-    max-width: 126px;
+    max-width: 120px;
+  }
+  .product {
+    margin-bottom: 12px;
   }
   .product-content {
     padding: 4px 0;
@@ -747,6 +625,12 @@ body {
     top: 14px;
     left: 8px;
   }
+  .section-chooseus {
+    padding: 24px 0;
+  }
+  .section-chooseus .section-title {
+    margin-bottom: 36px;
+  }
   .chooseus {
     flex-direction: row;
   }
@@ -757,6 +641,11 @@ body {
   .chooseus-title {
     font-size: var(--font-xs);
     margin-bottom: 8px;
+  }
+  .chooseus-content {
+    flex: 1;
+    width: 100%;
+    max-width: 100%;
   }
   .chooseus-desc {
     font-size: var(--font-2xs);
@@ -782,8 +671,17 @@ body {
   .form-submit {
     max-width: 120px;
   }
+  .footer-sub-link {
+    font-size: var(--font-xs);
+  }
+  .footer-list {
+    flex-direction: column;
+  }
   .footer-menu {
     flex-direction: column;
+  }
+  .footer-item {
+    align-items: flex-start;
   }
   .footer-iso-desc {
     margin-bottom: 48px;
