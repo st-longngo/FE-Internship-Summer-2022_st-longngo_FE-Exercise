@@ -1,0 +1,279 @@
+.home-page {
+  .section {
+    margin-bottom: 48px;
+    &-title {
+      margin-bottom: 40px;
+    }
+    &-header {
+      @include flex($content: space-between, $items: center);
+      margin-bottom: 40px;
+      .section-title {
+        margin-bottom: 0;
+      }
+    }
+    &-banner {
+      position: relative;
+      @include size(100%, 800px);
+      background: url(../images/Fashion-home-image.png) no-repeat center/cover;
+      &::after {
+        content: "";
+        @include position(absolute, 0, 0, null, 0, 2);
+        @include size(100%, 100%);
+        background: linear-gradient(
+          180deg,
+          rgba(0, 0, 0, 0.8) 0%,
+          rgba(0, 0, 0, 0.5) 100%
+        );
+      }
+    }
+    &-chooseus {
+      padding: 48px 0 54px 0;
+      background-color: map-get($color, "gray-6");
+    }
+    &-contact.section {
+      position: relative;
+      @include flex($items: center);
+      min-height: 240px;
+      margin-bottom: 0;
+      background: url(../images/Fashion-home-image-8.png) no-repeat center/cover;
+      &::after {
+        content: "";
+        @include position(absolute, 0, 0, null, 0);
+        @include size(100%, 100%);
+        background: linear-gradient(
+          90deg,
+          #000000 33.28%,
+          rgba(0, 0, 0, 0) 94.05%
+        );
+        opacity: 0.7;
+      }
+    }
+  }
+  .about {
+    position: relative;
+    min-height: 359px;
+    &::after {
+      content: "";
+      @include position(absolute, 0, 0, null, 0);
+      @include size(100%, 100%);
+      background: map-get($color, text);
+      opacity: 0.5;
+    }
+    &-item-1 {
+      background: url("../images/Fashion-home-image-5.png") no-repeat
+        center/cover;
+    }
+    &-item-2 {
+      background: url("../images/Fashion-home-image-6.png") no-repeat
+        center/cover;
+    }
+    &-item-3 {
+      background: url("../images/Fashion-home-image-7.png") no-repeat
+        center/cover;
+    }
+    &-content {
+      @include position(absolute, 0, 0, null, 0, 3);
+      @include flex(column, flex-end, null, null);
+      @include size(100%, 100%);
+      padding: 56px 40px;
+    }
+    &-title {
+      min-height: 73px;
+      margin-bottom: 50px;
+      color: map-get($color, "white");
+      font-size: map-get($font-size, "lg");
+      font-weight: map-get($font-weight, "regular");
+    }
+    &-badge {
+      margin-bottom: 8px;
+    }
+  }
+  .chooseus {
+    @include flex(column);
+    &-thumnail {
+      @include flex(null, center, center);
+      @include size(68px, 68px);
+      margin-bottom: 46px;
+      border-radius: 10px;
+      background-color: map-get($color, "white");
+    }
+    &-content {
+      max-width: 243px;
+    }
+    &-title {
+      margin-bottom: 16px;
+      text-transform: capitalize;
+      font-size: map-get($font-size, "md-2");
+    }
+    &-desc {
+      color: map-get($color, "gray");
+    }
+    &-active {
+      color: map-get($color, primary);
+    }
+  }
+  .contact {
+    &-inner {
+      @include position($namePosition: relative, $zIndex: 3);
+      @include flex($items: center);
+    }
+    &-title {
+      font-size: map-get($font-size, "lg");
+      color: map-get($color, "white");
+      line-height: 36px;
+      font-weight: map-get($font-weight, "regular");
+    }
+  }
+  .form {
+    &-group {
+      @include flex($content: space-between);
+      gap: 0 40px;
+    }
+    &-input {
+      flex: 1;
+      padding: 14px 24px;
+      border-radius: 50px;
+      font-size: map-get($font-size, "sm");
+      color: map-get($color, text);
+      &::placeholder {
+        font-family: $font-family-primary;
+        color: map-get($color, placeholder);
+      }
+    }
+  }
+}
+
+@include maxWidth(992px) {
+  .home-page {
+    .section {
+      &-title {
+        margin-bottom: 36px;
+      }
+      &-header {
+        margin-bottom: 36px;
+      }
+      &-chooseus {
+        padding: 30px 0;
+      }
+    }
+    .about {
+      margin-top: 12px;
+      min-height: 296px;
+      &-content {
+        padding: 24px;
+      }
+      &-title {
+        font-size: map-get($font-size, "md-3");
+        min-height: 50px;
+        margin-bottom: 20px;
+      }
+    }
+    .chooseus {
+      @include flex($direction: row);
+      &-thumnail {
+        margin-right: 20px;
+        margin-bottom: 40px;
+      }
+      &-content {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+      }
+      &-title {
+        font-size: map-get($font-size, "md");
+        margin-bottom: 8px;
+      }
+      &-desc {
+        font-size: map-get($font-size, "xs");
+      }
+    }
+    .contact {
+      &-inner {
+        @include flex($direction: column);
+      }
+      &-title {
+        margin-bottom: 40px;
+        font-size: map-get($font-size, "md-3");
+        line-height: 21px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@include maxWidth(576px) {
+  .home-page {
+    .section {
+      margin-bottom: 24px;
+      &-title {
+        margin-bottom: 16px;
+      }
+      &-header {
+        margin-bottom: 16px;
+      }
+      &-banner {
+        @include size(null, 740px);
+        background-image: url(../images/Fashion-home-image-9.png);
+      }
+      &-chooseus {
+        padding: 24px 0;
+        .section-title {
+          margin-bottom: 36px;
+        }
+      }
+    }
+    .about {
+      min-height: 225px;
+      margin-top: 8px;
+      &-content {
+        padding: 16px;
+      }
+      &-title {
+        max-width: 120px;
+        min-height: 40px;
+        margin-bottom: 8px;
+        font-size: map-get($font-size, "md");
+      }
+    }
+    .chooseus {
+      @include flex($direction: row);
+      &-thumnail {
+        margin: 0 16px 16px 0;
+      }
+      &-title {
+        font-size: map-get($font-size, "xs");
+        margin-bottom: 8px;
+      }
+      &-content {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+      }
+      &-desc {
+        font-size: map-get($font-size, "2xs");
+      }
+    }
+    .contact {
+      &-inner {
+        @include flex($direction: column);
+      }
+      &-title {
+        max-width: 200px;
+        margin-bottom: 24px;
+        font-size: map-get($font-size, "md");
+        line-height: 21px;
+      }
+    }
+    .form {
+      &-group {
+        @include flex($direction: column);
+      }
+      &-input {
+        margin-bottom: 16px;
+      }
+      &-submit {
+        max-width: 120px;
+      }
+    }
+  }
+}

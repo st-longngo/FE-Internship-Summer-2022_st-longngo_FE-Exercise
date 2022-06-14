@@ -1,0 +1,145 @@
+.header {
+  @include position(absolute, 0, 0, null, 0, 10);
+  padding: 50px 0;
+  &-inner {
+    @include flex($content: space-between, $items: center);
+  }
+  &-extra {
+    @include flex($items: center);
+    gap: 0 24px;
+    margin-right: -24px;
+  }
+
+  .logo {
+    a {
+      display: flex;
+      img {
+        filter: brightness(0) saturate(100%) invert(99%) sepia(0%)
+          saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
+      }
+    }
+  }
+  .nav {
+    &-menu {
+      @include flex($items: center);
+      gap: 0 96px;
+    }
+    &-link {
+      color: map-get($color, primary);
+      font-size: map-get($font-size, "md-2");
+      font-weight: map-get($font-weight, "bold");
+    }
+  }
+  .extra {
+    &-link {
+      @include flex($content: center, $items: center);
+    }
+    &-icon {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+        saturate(7500%) hue-rotate(219deg) brightness(106%) contrast(104%);
+    }
+    &-control {
+      display: none;
+      background-color: transparent;
+    }
+  }
+}
+
+@include maxWidth(992px) {
+  .header {
+    padding: 40px;
+    &-extra {
+      margin-right: 0;
+      #search {
+        display: none;
+      }
+    }
+    .logo {
+      a {
+        color: map-get($color, text);
+        font-size: map-get($font-size, "md-2");
+        img {
+          @include size(128px, 32px);
+        }
+      }
+    }
+    .nav {
+      @include position($namePosition: absolute, $top: 100%, $left: 0);
+      opacity: 0;
+      visibility: hidden;
+      display: flex;
+      @include size(100%, 0);
+      transition: 0.3s linear;
+      background: map-get($color, "white");
+      overflow: hidden;
+      &-active {
+        display: flex;
+        height: 200px;
+        opacity: 1;
+        visibility: visible;
+        .nav-menu {
+          @include flex(column, center, center, null);
+          gap: 30px 0;
+          @include size(100%);
+        }
+      }
+    }
+    .extra {
+      &-icon {
+        @include size(20px, 20px);
+      }
+      &-control {
+        @include flex($content: center, $items: center);
+        @include size(20px, 20px);
+        filter: brightness(0) saturate(100%) invert(99%) sepia(0%)
+          saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
+        #close {
+          display: none;
+        }
+        #hamburger {
+          display: flex;
+        }
+      }
+      &-active {
+        #close {
+          display: flex;
+        }
+        #hamburger {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@include maxWidth(576px) {
+  .header {
+    position: fixed;
+    padding: 20px 0;
+    background-color: map-get($color, "white");
+    .logo {
+      a {
+        color: map-get($color, text);
+        font-size: map-get($font-size, "md-2");
+        img {
+          @include size(128px, 32px);
+          filter: brightness(0) saturate(100%) invert(18%) sepia(8%)
+            saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
+        }
+      }
+    }
+    .extra {
+      &-icon {
+        @include size(20px, 20px);
+        filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+          hue-rotate(35deg) brightness(90%) contrast(90%);
+      }
+      &-control {
+        @include flex($content: center, $items: center);
+        @include size(20px, 20px);
+        filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+          hue-rotate(35deg) brightness(90%) contrast(90%);
+      }
+    }
+  }
+}

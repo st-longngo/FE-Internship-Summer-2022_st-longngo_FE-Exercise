@@ -15,50 +15,64 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="common.css" /> -->
+    <link rel="stylesheet" href="./stylesheets/styles.css" />
   </head>
   <body>
     <header class="header">
-      <div class="container header-inner">
-        <h1 class="logo">
-          <a href="#">
-            <img src="./images/Logo.svg" alt="Eshop Logo" />
-          </a>
-        </h1>
-        <nav class="nav">
-          <ul class="nav-menu">
-            <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+      <div class="container">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="#">
+              <img src="./images/Logo.svg" alt="Eshop Logo" />
+            </a>
+          </h1>
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+            </ul>
+          </nav>
+          <ul class="header-extra">
+            <li class="extra-item" id="search">
+              <a href="#" id="search" class="extra-link">
+                <img
+                  src="./images/search.svg"
+                  alt="search"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="#" id="cart" class="extra-link">
+                <img src="./images/cart.svg" alt="cart" class="extra-icon" />
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="#" id="person" class="extra-link">
+                <img
+                  src="./images/avatar.svg"
+                  alt="avatar"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <button class="extra-control">
+                <img
+                  src="./images/hamburger.svg"
+                  alt="hamburger"
+                  id="hamburger"
+                />
+                <img src="./images/close.svg" alt="close" id="close" />
+              </button>
+            </li>
           </ul>
-        </nav>
-        <ul class="header-extra">
-          <li class="extra-item" id="search">
-            <a href="#" id="search" class="extra-link">
-              <img src="./images/search.svg" alt="search" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <a href="#" id="cart" class="extra-link">
-              <img src="./images/cart.svg" alt="cart" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <a href="#" id="person" class="extra-link">
-              <img src="./images/avatar.svg" alt="avatar" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <button class="extra-control">
-              <img src="./images/hamburger.svg" alt="hamburger" id="hamburger"/>
-              <img src="./images/close.svg" alt="close" id="close">
-            </button>
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
-    <main>
+    <main class="home-page">
       <section class="section section-banner">
         <div class="container banner-inner">
           <div class="banner-content">
@@ -67,11 +81,11 @@
               <span>summer</span>
               collection
             </h2>
-            <a href="#" class="content-link">
-              <div class="content-link-icon">
+            <a href="#" class="banner-link">
+              <div class="banner-link-icon">
                 <img src="./images/arrow-left.png" alt="icon arrow left" />
               </div>
-              <span class="content-link-text">shop now</span>
+              <span class="banner-link-text">shop now</span>
             </a>
           </div>
         </div>
@@ -117,7 +131,7 @@
       <section class="section section-about">
         <div class="container">
           <ul class="row">
-            <li class="col-6 col-sm-12">
+            <li class="col-6 col-lg-12 col-sm-12">
               <div class="about about-item-1">
                 <div class="about-content">
                   <h4 class="about-title">New arrivalsare now in!</h4>
@@ -129,7 +143,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-3 col-sm-6">
+            <li class="col-3 col-lg-6 col-sm-6">
               <div class="about about-item-2">
                 <div class="about-content">
                   <h4 class="about-title">Basic t-shirts $29,99</h4>
@@ -141,7 +155,7 @@
                 </div>
               </div>
             </li>
-            <li class="col-3 col-sm-6">
+            <li class="col-3 col-lg-6 col-sm-6">
               <div class="about about-item-3">
                 <div class="about-content">
                   <div class="about-badge">
@@ -160,12 +174,12 @@
       <section class="section section-product-selected">
         <div class="container">
           <div class="section-header">
-            <h3 class="section-title">Selected just for you</h3>
+            <h3 class="txt-title section-title">Selected just for you</h3>
             <a href="" class="btn btn-border">show more</a>
           </div>
           <div class="section-content">
             <ul class="row">
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product product-sale">
                   <span class="badge badge-primary product-badge">-30%</span>
                   <div class="product-thumnail">
@@ -188,7 +202,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -209,7 +223,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -230,7 +244,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -257,10 +271,10 @@
       </section>
       <section class="section section-chooseus">
         <div class="container">
-          <h3 class="section-title">why should you choose us</h3>
+          <h3 class="txt-title section-title">why should you choose us</h3>
           <div class="section-content">
             <ul class="row">
-              <li class="col-3 col-sm-12">
+              <li class="col-3 col-lg-6 col-sm-12">
                 <div class="chooseus">
                   <div class="chooseus-thumnail">
                     <img src="./images/Free-Shipping.svg" alt="free shipping" />
@@ -274,7 +288,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-12">
+              <li class="col-3 col-lg-6 col-sm-12">
                 <div class="chooseus chooseus-active">
                   <div class="chooseus-thumnail">
                     <img src="./images/payment.svg" alt="Payments" />
@@ -288,7 +302,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-12">
+              <li class="col-3 col-lg-6 col-sm-12">
                 <div class="chooseus">
                   <div class="chooseus-thumnail">
                     <img
@@ -305,7 +319,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-12">
+              <li class="col-3 col-lg-6 col-sm-12">
                 <div class="chooseus">
                   <div class="chooseus-thumnail">
                     <img src="./images/materials.svg" alt="Finest Quality" />
@@ -325,10 +339,10 @@
       </section>
       <section class="section section-product-today">
         <div class="container">
-          <h3 class="section-title">Products in today</h3>
+          <h3 class="txt-title section-title">Products in today</h3>
           <div class="section-content">
             <ul class="row">
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product product-sale">
                   <span class="badge badge-primary product-badge">-30%</span>
                   <div class="product-thumnail">
@@ -351,7 +365,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -372,7 +386,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -393,7 +407,7 @@
                   </div>
                 </div>
               </li>
-              <li class="col-3 col-sm-6">
+              <li class="col-3 col-lg-6 col-sm-6">
                 <div class="product">
                   <div class="product-thumnail">
                     <a href="" class="product-link">
@@ -419,68 +433,71 @@
         </div>
       </section>
       <section class="section-contact section">
-        <div class="container contact-inner">
-          <div class="col-6 col-sm-12">
-            <h3 class="contact-title">
-              Subscribe to our newsletter andreceive exclusive offers every week
-            </h3>
-          </div>
-          <div class="col-6 col-sm-12">
-            <form action="" class="form-group">
-              <input
-                type="text"
-                class="form-input"
-                placeholder="Enter you email"
-              />
-              <button type="submit" class="btn btn-secondary form-submit">
-                SUBSCRIBE
-              </button>
-            </form>
+        <div class="container">
+          <div class="contact-inner">
+            <div class="col-6 col-lg-12 col-sm-12">
+              <h3 class="contact-title">
+                Subscribe to our newsletter andreceive exclusive offers every
+                week
+              </h3>
+            </div>
+            <div class="col-6 col-lg-12 col-sm-12">
+              <form action="" class="form-group">
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter you email"
+                />
+                <button type="submit" class="btn btn-secondary form-submit">
+                  SUBSCRIBE
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer-top border-bottom">
+      <div class="footer-top">
         <div class="container">
           <div class="row footer-list">
-            <div class="col-5 col-sm-12 footer-iso">
-              <a href="" class="footer-iso-logo">
+            <div class="col-5 col-lg-12 col-sm-12 footer-iso">
+              <a href="#" class="footer-iso-logo">
                 <img src="./images/logo.svg" alt="E-Shop" />
               </a>
               <p class="footer-iso-desc">
                 House My Brand designs clothing for the young, the old &everyone
                 in between – but most importantly, for the fashionable
               </p>
-              <ul class="footer-iso-social">
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+              <ul class="footer-social">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-facebook"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-twitter"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-linkedin"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-instagram"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-youtube"></i>
                   </a>
                 </li>
               </ul>
             </div>
-            <ul class="col-7 col-sm-12 footer-menu">
+            <ul class="col-7 col-lg-12 col-sm-12 footer-menu">
               <li class="col-4 col-sm-12 footer-item">
                 <ul class="footer-sub-list">
                   <li class="footer-sub-item">

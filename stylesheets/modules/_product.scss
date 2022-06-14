@@ -1,0 +1,91 @@
+.product {
+  @include position($namePosition: relative);
+  @include flex(column);
+  &-thumnail {
+    flex: 1;
+  }
+  &-link {
+    display: block;
+    img {
+      @include size(100%, 100%);
+      display: block;
+    }
+  }
+  &-content {
+    padding: 16px 0;
+  }
+  &-name {
+    a {
+      font-size: map-get($font-size, "md-2");
+      color: map-get($color, text);
+      font-weight: map-get($font-weight, light);
+      line-height: 24px;
+    }
+  }
+  &-price {
+    @include flex($content: space-between, $items: center);
+    span {
+      font-size: map-get($font-size, "md-3");
+      font-weight: map-get($font-weight, "regular");
+    }
+  }
+  &-sale {
+    .product-price {
+      span {
+        color: map-get($color, secondary);
+      }
+      .product-discount {
+        color: map-get($color, "gray-2");
+      }
+    }
+  }
+  &-badge {
+    @include position($namePosition: absolute, $top: 24px, $left: 18px);
+  }
+}
+
+@include maxWidth(992px) {
+  .product {
+    margin-bottom: 12px;
+    &-content {
+      padding: 8px 0;
+    }
+    &-name {
+      a {
+        font-size: map-get($font-size, "md");
+      }
+    }
+    &-price {
+      span {
+        font-size: map-get($font-size, "md-2");
+      }
+    }
+  }
+}
+
+@include maxWidth(576px) {
+  .product {
+    margin-bottom: 12px;
+    &-content {
+      padding: 4px 0;
+    }
+    &-thumnail {
+      height: 228px;
+      object-fit: cover;
+    }
+    &-name {
+      a {
+        font-size: map-get($font-size, "xs");
+      }
+    }
+    &-price {
+      span {
+        font-size: map-get($font-size, "2xs");
+      }
+    }
+    &-badge {
+      top: 14px;
+      left: 8px;
+    }
+  }
+}
