@@ -1,6 +1,6 @@
 :root {
   --primary-color: #fbb03b;
-  --secondary-color: #ebe2e2;
+  --secondary-color: #ff0000;
   --white: #fff;
   --text-color: #333333;
   --placeholder-color: #ababab;
@@ -126,7 +126,8 @@ body {
   background: url(./images/Fashion-home-image.png) no-repeat center/cover;
 }
 
-.overlay {
+.section-banner::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -368,7 +369,7 @@ body {
 
 /* CHOOSE US */
 .section-chooseus {
-  padding: 48px 0;
+  padding: 48px 0 54px 0;
   background-color: var(--section-bg);
 }
 
@@ -475,11 +476,13 @@ body {
 }
 
 .footer-iso-logo {
-  display: inline-block;
+  display: block;
 }
 
 .footer-iso-logo img {
   display: block;
+  filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%)
+    hue-rotate(219deg) brightness(106%) contrast(104%);
 }
 
 .footer-iso-desc {
