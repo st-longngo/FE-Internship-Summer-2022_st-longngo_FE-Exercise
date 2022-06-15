@@ -3,6 +3,7 @@ body {
   font-size: 14px;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
+  line-height: 1.5;
 }
 
 * {
@@ -31,13 +32,6 @@ textarea {
 
 button {
   cursor: pointer;
-}
-
-.container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 24px;
-  margin: 0 auto;
 }
 
 .row {
@@ -186,6 +180,57 @@ button {
     width: 100%;
   }
 }
+.txt-title {
+  font-size: 32px;
+  font-weight: 300;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sub-title {
+  font-weight: 700;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.typo-1 {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 36px;
+}
+
+.typo-2 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media only screen and (max-width: 992px) {
+  .txt-title {
+    font-size: 24px;
+  }
+  .typo-1 {
+    font-size: 14px;
+    line-height: 26px;
+  }
+  .typo-2 {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .txt-title {
+    font-size: 18px;
+  }
+  .typo-1 {
+    font-size: 20px;
+    line-height: 21px;
+  }
+  .typo-2 {
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
 .badge {
   padding: 6px 10px;
   border-radius: 20px;
@@ -241,28 +286,18 @@ button {
 }
 .product {
   position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.product-thumnail {
-  flex: 1;
 }
 .product-link {
   display: block;
 }
-.product-link img {
+.product-image {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 .product-content {
   padding: 16px 0;
-}
-.product-name a {
-  font-size: 16px;
-  color: #333333;
-  font-weight: 300;
-  line-height: 24px;
 }
 .product-price {
   display: flex;
@@ -287,13 +322,13 @@ button {
 
 @media only screen and (max-width: 992px) {
   .product {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  .product-image {
+    min-height: 227px;
   }
   .product-content {
     padding: 8px 0;
-  }
-  .product-name a {
-    font-size: 14px;
   }
   .product-price span {
     font-size: 16px;
@@ -306,13 +341,6 @@ button {
   .product-content {
     padding: 4px 0;
   }
-  .product-thumnail {
-    height: 228px;
-    object-fit: cover;
-  }
-  .product-name a {
-    font-size: 12px;
-  }
   .product-price span {
     font-size: 10px;
   }
@@ -321,6 +349,13 @@ button {
     left: 8px;
   }
 }
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
 .header {
   position: absolute;
   top: 0;
@@ -337,34 +372,41 @@ button {
 .header-extra {
   display: flex;
   align-items: center;
-  gap: 0 24px;
   margin-right: -24px;
 }
 .header .logo a {
   display: flex;
 }
-.header .logo a img {
+.header .logo img {
   filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
 }
-.header .nav-menu {
+
+.nav-menu {
   display: flex;
   align-items: center;
   gap: 0 96px;
 }
-.header .nav-link {
+.nav-link {
   color: #fbb03b;
   font-size: 16px;
   font-weight: 700;
 }
-.header .extra-link {
+
+.extra-item {
+  margin-right: 24px;
+}
+.extra-item:last-child {
+  margin-right: 0;
+}
+.extra-link {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.header .extra-icon {
+.extra-icon {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(219deg) brightness(106%) contrast(104%);
 }
-.header .extra-control {
+.extra-control {
   display: none;
   background-color: transparent;
 }
@@ -382,12 +424,15 @@ button {
   .header .logo a {
     color: #333333;
     font-size: 16px;
-  }
-  .header .logo a img {
     width: 128px;
     height: 32px;
   }
-  .header .nav {
+  .header .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .nav {
     position: absolute;
     top: calc(100% + 15px);
     left: 50%;
@@ -401,13 +446,13 @@ button {
     background: #ffffff;
     overflow: hidden;
   }
-  .header .nav-active {
+  .nav-active {
     display: flex;
     height: 200px;
     opacity: 1;
     visibility: visible;
   }
-  .header .nav-active .nav-menu {
+  .nav-active .nav-menu {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -415,11 +460,11 @@ button {
     gap: 30px 0;
     width: 100%;
   }
-  .header .extra-icon {
+  .extra-icon {
     width: 20px;
     height: 20px;
   }
-  .header .extra-control {
+  .extra-control {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -427,16 +472,16 @@ button {
     height: 20px;
     filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
   }
-  .header .extra-control #close {
+  .extra-control #close {
     display: none;
   }
-  .header .extra-control #hamburger {
+  .extra-control #hamburger {
     display: flex;
   }
-  .header .extra-active #close {
+  .extra-active #close {
     display: flex;
   }
-  .header .extra-active #hamburger {
+  .extra-active #hamburger {
     display: none;
   }
 }
@@ -450,17 +495,15 @@ button {
     color: #333333;
     font-size: 16px;
   }
-  .header .logo a img {
-    width: 128px;
-    height: 32px;
+  .header .logo img {
     filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
   }
-  .header .extra-icon {
+  .extra-icon {
     width: 20px;
     height: 20px;
     filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
   }
-  .header .extra-control {
+  .extra-control {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -524,24 +567,27 @@ button {
   justify-content: flex-end;
   align-items: center;
   width: 76%;
-  max-width: 1326px;
+  max-width: 1316px;
   border-top-right-radius: 70px;
   padding: 38px 88px 24px 0;
   background-color: #ffffff;
 }
-.banner-policy .policy-list {
+
+.policy-list {
   display: flex;
-  justify-content: space-between;
-  gap: 0 48px;
 }
-.banner-policy .policy-item {
+.policy-item {
   display: flex;
   max-width: 237px;
+  margin-right: 48px;
 }
-.banner-policy .policy-content {
+.policy-item:last-child {
+  margin-right: 0;
+}
+.policy-content {
   flex: 1;
 }
-.banner-policy .policy-icon {
+.policy-icon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -551,7 +597,7 @@ button {
   margin-right: 21px;
   background-color: #fff3df;
 }
-.banner-policy .policy-desc {
+.policy-desc {
   margin-top: 5px;
   font-size: 12px;
   color: #a8a8a8;
@@ -561,17 +607,17 @@ button {
   .banner-policy {
     width: 100%;
     border-top-right-radius: 0;
-    padding: 38px 40px 24px 40px;
+    padding: 30px 40px;
     justify-content: center;
-  }
-  .banner-policy .policy-list {
-    gap: 0 30px;
   }
   .banner-title {
     font-size: 60px;
   }
   .banner-link-text {
     font-size: 20px;
+  }
+  .policy-item {
+    margin-right: 30px;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -595,25 +641,22 @@ button {
   padding: 52px 0;
   border-bottom: 1px solid #ffffff;
 }
-.footer-iso {
-  display: flex;
-  flex-direction: column;
+.footer-logo {
+  display: inline-flex;
 }
-.footer-iso-logo {
-  display: block;
-}
-.footer-iso-logo img {
-  display: block;
+.footer-logo img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(219deg) brightness(106%) contrast(104%);
 }
-.footer-iso-desc {
+.footer-desc {
   max-width: 374px;
-  margin: 25px 0 56px 0;
+  margin: 24px 0 56px 0;
   color: #ffffff;
 }
 .footer-social {
   display: flex;
-  gap: 0 32px;
+}
+.footer-social-item {
+  margin-right: 32px;
 }
 .footer-social-link {
   font-size: 18px;
@@ -627,22 +670,14 @@ button {
   flex-direction: column;
   align-items: flex-end;
 }
-.footer-sub-list {
-  display: flex;
-  flex-direction: column;
-}
 .footer-sub-item {
   margin-bottom: 20px;
 }
 .footer-sub-link {
   color: #ffffff;
 }
-.footer-sub-link.sub-title {
-  font-weight: 700;
-  font-size: 16px;
-}
 .footer-bottom {
-  padding: 24px 0;
+  padding: 24px;
 }
 .footer-copyright {
   text-align: center;
@@ -653,12 +688,9 @@ button {
 
 @media only screen and (max-width: 992px) {
   .footer-top {
-    padding: 40px 20px;
+    padding: 24px 0;
   }
-  .footer-iso {
-    align-items: flex-start;
-  }
-  .footer-iso-desc {
+  .footer-desc {
     max-width: 100%;
   }
   .footer-social {
@@ -669,9 +701,6 @@ button {
   }
 }
 @media only screen and (max-width: 576px) {
-  .footer-top {
-    padding: 24px 19px;
-  }
   .footer-list {
     display: flex;
     flex-direction: column;
@@ -680,11 +709,7 @@ button {
     display: flex;
     flex-direction: column;
   }
-  .footer-item {
-    display: flex;
-    align-items: flex-start;
-  }
-  .footer-iso-desc {
+  .footer-desc {
     margin-bottom: 48px;
   }
   .footer-social {
@@ -697,23 +722,14 @@ button {
     font-size: 12px;
   }
 }
-.txt-title {
-  font-size: 32px;
-  font-weight: 300;
-  text-align: center;
-  text-transform: capitalize;
+.txt-bold {
+  font-weight: 700;
 }
 
-@media only screen and (max-width: 992px) {
-  .txt-title {
-    font-size: 24px;
-  }
+.txt-light {
+  font-weight: 300;
 }
-@media only screen and (max-width: 576px) {
-  .txt-title {
-    font-size: 18px;
-  }
-}
+
 .home-page .section {
   margin-bottom: 48px;
 }
@@ -809,16 +825,9 @@ button {
 .home-page .about-title {
   min-height: 73px;
   margin-bottom: 50px;
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 400;
 }
 .home-page .about-badge {
   margin-bottom: 8px;
-}
-.home-page .chooseus {
-  display: flex;
-  flex-direction: column;
 }
 .home-page .chooseus-thumnail {
   display: flex;
@@ -835,8 +844,6 @@ button {
 }
 .home-page .chooseus-title {
   margin-bottom: 16px;
-  text-transform: capitalize;
-  font-size: 16px;
 }
 .home-page .chooseus-desc {
   color: #808080;
@@ -849,12 +856,6 @@ button {
   z-index: 3;
   display: flex;
   align-items: center;
-}
-.home-page .contact-title {
-  font-size: 24px;
-  color: #ffffff;
-  line-height: 36px;
-  font-weight: 400;
 }
 .home-page .form-group {
   display: flex;
@@ -891,7 +892,6 @@ button {
     padding: 24px;
   }
   .home-page .about-title {
-    font-size: 20px;
     min-height: 50px;
     margin-bottom: 20px;
   }
@@ -909,7 +909,6 @@ button {
     max-width: 100%;
   }
   .home-page .chooseus-title {
-    font-size: 14px;
     margin-bottom: 8px;
   }
   .home-page .chooseus-desc {
@@ -921,9 +920,6 @@ button {
   }
   .home-page .contact-title {
     margin-bottom: 40px;
-    font-size: 20px;
-    line-height: 21px;
-    text-align: center;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -970,7 +966,6 @@ button {
     margin: 0 16px 16px 0;
   }
   .home-page .chooseus-title {
-    font-size: 12px;
     margin-bottom: 8px;
   }
   .home-page .chooseus-content {

@@ -1,26 +1,15 @@
 .product {
-  @include position($namePosition: relative);
-  @include flex(column);
-  &-thumnail {
-    flex: 1;
-  }
+  position: relative;
   &-link {
     display: block;
-    img {
-      @include size(100%, 100%);
-      display: block;
-    }
+  }
+  &-image {
+    @include size(100%, 100%);
+    display: block;
+    object-fit: cover;
   }
   &-content {
     padding: 16px 0;
-  }
-  &-name {
-    a {
-      font-size: map-get($font-size, "md-2");
-      color: map-get($color, text);
-      font-weight: map-get($font-weight, light);
-      line-height: 24px;
-    }
   }
   &-price {
     @include flex($content: space-between, $items: center);
@@ -46,14 +35,12 @@
 
 @include maxWidth(992px) {
   .product {
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    &-image {
+      min-height: 227px;
+    }
     &-content {
       padding: 8px 0;
-    }
-    &-name {
-      a {
-        font-size: map-get($font-size, "md");
-      }
     }
     &-price {
       span {
@@ -68,15 +55,6 @@
     margin-bottom: 12px;
     &-content {
       padding: 4px 0;
-    }
-    &-thumnail {
-      height: 228px;
-      object-fit: cover;
-    }
-    &-name {
-      a {
-        font-size: map-get($font-size, "xs");
-      }
     }
     &-price {
       span {

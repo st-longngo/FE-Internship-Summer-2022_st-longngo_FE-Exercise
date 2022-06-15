@@ -1,18 +1,8 @@
-.txt-title {
-  font-size: map-get($font-size, "xl");
+.txt-bold {
+  font-weight: map-get($font-weight, "bold");
+}
+
+.txt-light {
   font-weight: map-get($font-weight, "light");
-  text-align: center;
-  text-transform: capitalize;
 }
 
-@include maxWidth(992px) {
-  .txt-title {
-    font-size: map-get($font-size, "lg");
-  }
-}
-
-@include maxWidth(576px) {
-  .txt-title {
-    font-size: map-get($font-size, "md-2-5");
-  }
-}

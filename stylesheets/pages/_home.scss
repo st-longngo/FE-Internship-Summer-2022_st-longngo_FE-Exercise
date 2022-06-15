@@ -80,16 +80,12 @@
     &-title {
       min-height: 73px;
       margin-bottom: 50px;
-      color: map-get($color, "white");
-      font-size: map-get($font-size, "lg");
-      font-weight: map-get($font-weight, "regular");
     }
     &-badge {
       margin-bottom: 8px;
     }
   }
   .chooseus {
-    @include flex(column);
     &-thumnail {
       @include flex(null, center, center);
       @include size(68px, 68px);
@@ -102,8 +98,6 @@
     }
     &-title {
       margin-bottom: 16px;
-      text-transform: capitalize;
-      font-size: map-get($font-size, "md-2");
     }
     &-desc {
       color: map-get($color, "gray");
@@ -116,12 +110,6 @@
     &-inner {
       @include position($namePosition: relative, $zIndex: 3);
       @include flex($items: center);
-    }
-    &-title {
-      font-size: map-get($font-size, "lg");
-      color: map-get($color, "white");
-      line-height: 36px;
-      font-weight: map-get($font-weight, "regular");
     }
   }
   .form {
@@ -163,7 +151,6 @@
         padding: 24px;
       }
       &-title {
-        font-size: map-get($font-size, "md-3");
         min-height: 50px;
         margin-bottom: 20px;
       }
@@ -180,7 +167,6 @@
         max-width: 100%;
       }
       &-title {
-        font-size: map-get($font-size, "md");
         margin-bottom: 8px;
       }
       &-desc {
@@ -193,9 +179,6 @@
       }
       &-title {
         margin-bottom: 40px;
-        font-size: map-get($font-size, "md-3");
-        line-height: 21px;
-        text-align: center;
       }
     }
   }
@@ -244,7 +227,6 @@
         margin: 0 16px 16px 0;
       }
       &-title {
-        font-size: map-get($font-size, "xs");
         margin-bottom: 8px;
       }
       &-content {

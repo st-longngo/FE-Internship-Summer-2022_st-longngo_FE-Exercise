@@ -39,35 +39,39 @@
     @include position(absolute, null, 0, 0, 0, 3);
     @include flex($content: flex-end, $items: center);
     @include size(76%);
-    max-width: 1326px;
+    max-width: 1316px;
     border-top-right-radius: 70px;
     padding: 38px 88px 24px 0;
     background-color: map-get($color, "white");
-    .policy {
-      &-list {
-        @include flex($content: space-between);
-        gap: 0 48px;
-      }
-      &-item {
-        display: flex;
-        max-width: 237px;
-      }
-      &-content {
-        flex: 1;
-      }
-      &-icon {
-        @include flex($content: center, $items: center);
-        @include size(36px, 36px);
-        border-radius: 10px;
-        margin-right: 21px;
-        background-color: map-get($color, "orange");
-      }
-      &-desc {
-        margin-top: 5px;
-        font-size: map-get($font-size, "xs");
-        color: map-get($color, "gray-4");
-      }
+  }
+}
+
+.policy {
+  &-list {
+    display: flex;
+  }
+  &-item {
+    display: flex;
+    max-width: 237px;
+    margin-right: 48px;
+    &:last-child {
+      margin-right: 0;
     }
+  }
+  &-content {
+    flex: 1;
+  }
+  &-icon {
+    @include flex($content: center, $items: center);
+    @include size(36px, 36px);
+    border-radius: 10px;
+    margin-right: 21px;
+    background-color: map-get($color, "orange");
+  }
+  &-desc {
+    margin-top: 5px;
+    font-size: map-get($font-size, "xs");
+    color: map-get($color, "gray-4");
   }
 }
 
@@ -76,13 +80,8 @@
     &-policy {
       @include size(100%);
       border-top-right-radius: 0;
-      padding: 38px 40px 24px 40px;
+      padding: 30px 40px;
       justify-content: center;
-      .policy {
-        &-list {
-          gap: 0 30px;
-        }
-      }
     }
     &-title {
       font-size: map-get($font-size, "2xxl");
@@ -91,6 +90,11 @@
       &-text {
         font-size: map-get($font-size, "md-3");
       }
+    }
+  }
+  .policy {
+    &-item {
+      margin-right: 30px;
     }
   }
 }

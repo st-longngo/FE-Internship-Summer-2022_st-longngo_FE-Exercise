@@ -1,10 +1,3 @@
-.container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 24px;
-  margin: 0 auto;
-}
-
 .row {
   @include flex(null, null, null, wrap);
   margin: 0 -10px;
