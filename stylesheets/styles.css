@@ -943,6 +943,7 @@ button {
     margin-bottom: 36px;
   }
   .home-page .section-contact {
+    background: url(../images/Fashion-home-image-10.png) no-repeat center/cover;
     margin-bottom: 0;
   }
   .home-page .about {
