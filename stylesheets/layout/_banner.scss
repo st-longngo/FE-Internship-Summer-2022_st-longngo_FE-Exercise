@@ -78,9 +78,19 @@
       border-top-right-radius: 0;
       padding: 38px 40px 24px 40px;
       justify-content: center;
+      .policy {
+        &-list {
+          gap: 0 30px;
+        }
+      }
     }
     &-title {
       font-size: map-get($font-size, "2xxl");
+    }
+    &-link {
+      &-text {
+        font-size: map-get($font-size, "md-3");
+      }
     }
   }
 }

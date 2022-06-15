@@ -27,12 +27,6 @@
   z-index: $zIndex;
 }
 
-@mixin for-mobile {
-  @media only screen and (max-width: 576px) {
-    @content;
-  }
-}
-
 @mixin maxWidth($breakpoint) {
   @media only screen and (max-width: $breakpoint) {
     @content;

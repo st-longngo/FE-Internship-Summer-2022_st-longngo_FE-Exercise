@@ -64,11 +64,16 @@
       }
     }
     .nav {
-      @include position($namePosition: absolute, $top: 100%, $left: 0);
+      @include position(
+        $namePosition: absolute,
+        $top: calc(100% + 15px),
+        $left: 50%
+      );
       opacity: 0;
       visibility: hidden;
       display: flex;
-      @include size(100%, 0);
+      @include size(90%, 0);
+      transform: translateX(-50%);
       transition: 0.3s linear;
       background: map-get($color, "white");
       overflow: hidden;

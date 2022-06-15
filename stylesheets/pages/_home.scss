@@ -30,7 +30,7 @@
       padding: 48px 0 54px 0;
       background-color: map-get($color, "gray-6");
     }
-    &-contact.section {
+    &-contact {
       position: relative;
       @include flex($items: center);
       min-height: 240px;
@@ -221,6 +221,9 @@
           margin-bottom: 36px;
         }
       }
+      &-contact {
+        margin-bottom: 0;
+      }
     }
     .about {
       min-height: 225px;
@@ -262,6 +265,7 @@
         margin-bottom: 24px;
         font-size: map-get($font-size, "md");
         line-height: 21px;
+        text-align: left;
       }
     }
     .form {

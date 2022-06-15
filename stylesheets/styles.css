@@ -224,6 +224,12 @@ button {
   border: 1px solid #c4c4c4;
 }
 
+@media only screen and (max-width: 992px) {
+  .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
 @media only screen and (max-width: 576px) {
   .btn {
     padding: 4px 10px;
@@ -383,13 +389,14 @@ button {
   }
   .header .nav {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: calc(100% + 15px);
+    left: 50%;
     opacity: 0;
     visibility: hidden;
     display: flex;
-    width: 100%;
+    width: 90%;
     height: 0;
+    transform: translateX(-50%);
     transition: 0.3s linear;
     background: #ffffff;
     overflow: hidden;
@@ -557,8 +564,14 @@ button {
     padding: 38px 40px 24px 40px;
     justify-content: center;
   }
+  .banner-policy .policy-list {
+    gap: 0 30px;
+  }
   .banner-title {
     font-size: 60px;
+  }
+  .banner-link-text {
+    font-size: 20px;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -737,7 +750,7 @@ button {
   padding: 48px 0 54px 0;
   background-color: #f7f7f7;
 }
-.home-page .section-contact.section {
+.home-page .section-contact {
   position: relative;
   display: flex;
   align-items: center;
@@ -745,7 +758,7 @@ button {
   margin-bottom: 0;
   background: url(../images/Fashion-home-image-8.png) no-repeat center/cover;
 }
-.home-page .section-contact.section::after {
+.home-page .section-contact::after {
   content: "";
   position: absolute;
   top: 0;
@@ -933,6 +946,9 @@ button {
   .home-page .section-chooseus .section-title {
     margin-bottom: 36px;
   }
+  .home-page .section-contact {
+    margin-bottom: 0;
+  }
   .home-page .about {
     min-height: 225px;
     margin-top: 8px;
@@ -974,6 +990,7 @@ button {
     margin-bottom: 24px;
     font-size: 14px;
     line-height: 21px;
+    text-align: left;
   }
   .home-page .form-group {
     display: flex;
