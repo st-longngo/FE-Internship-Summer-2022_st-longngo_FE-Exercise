@@ -2,7 +2,7 @@
   background-color: map-get($color, primary);
   &-top {
     padding: 52px 0;
-    border-bottom: 1px solid map-get($color, "white");
+    border-bottom: 1px solid map-get($color, 'white');
   }
   &-logo {
     display: inline-flex;
@@ -14,7 +14,7 @@
   &-desc {
     max-width: 374px;
     margin: 24px 0 56px 0;
-    color: map-get($color, "white");
+    color: map-get($color, 'white');
   }
   &-social {
     display: flex;
@@ -22,8 +22,8 @@
       margin-right: 32px;
     }
     &-link {
-      font-size: map-get($font-size, "md-2-5");
-      color: map-get($color, "white");
+      font-size: map-get($font-size, 'md-2-5');
+      color: map-get($color, 'white');
     }
   }
   &-menu {
@@ -37,7 +37,7 @@
       margin-bottom: 20px;
     }
     &-link {
-      color: map-get($color, "white");
+      color: map-get($color, 'white');
     }
   }
   &-bottom {
@@ -45,9 +45,9 @@
   }
   &-copyright {
     text-align: center;
-    color: map-get($color, "white");
-    font-weight: map-get($font-weight, "regular");
-    font-size: map-get($font-size, "xs");
+    color: map-get($color, 'white');
+    font-weight: map-get($font-weight, 'regular');
+    font-size: map-get($font-size, 'xs');
   }
 }
 
@@ -73,7 +73,7 @@
         margin-bottom: 16px;
       }
       &-link {
-        font-size: map-get($font-size, "xs");
+        font-size: map-get($font-size, 'xs');
       }
     }
     &-item {

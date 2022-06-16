@@ -25,8 +25,8 @@
   }
   &-link {
     color: map-get($color, primary);
-    font-size: map-get($font-size, "md-2");
-    font-weight: map-get($font-weight, "bold");
+    font-size: map-get($font-size, 'md-2');
+    font-weight: map-get($font-weight, 'bold');
   }
 }
 .extra {
@@ -53,11 +53,11 @@
   .header {
     position: fixed;
     padding: 20px 0;
-    background-color: map-get($color, "white");
+    background-color: map-get($color, 'white');
     .logo {
       a {
         color: map-get($color, text);
-        font-size: map-get($font-size, "md-2");
+        font-size: map-get($font-size, 'md-2');
         @include size(128px, 32px);
       }
       img {
@@ -86,7 +86,7 @@
     @include size(90%, 0);
     transform: translateX(-50%);
     transition: 0.3s linear;
-    background: map-get($color, "white");
+    background: map-get($color, 'white');
     overflow: hidden;
     &-active {
       display: flex;

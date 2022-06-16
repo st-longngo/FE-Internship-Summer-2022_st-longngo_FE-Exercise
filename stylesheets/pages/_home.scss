@@ -16,7 +16,7 @@
       @include size(100%, 800px);
       background: url(../images/Fashion-home-image.png) no-repeat center/cover;
       &::after {
-        content: "";
+        content: '';
         @include position(absolute, 0, 0, 0, 0, 2);
         background: linear-gradient(
           180deg,
@@ -27,7 +27,7 @@
     }
     &-chooseus {
       padding: 48px 0 54px 0;
-      background-color: map-get($color, "gray-6");
+      background-color: map-get($color, 'gray-6');
     }
     &-contact {
       position: relative;
@@ -36,7 +36,7 @@
       margin-bottom: 0;
       background: url(../images/Fashion-home-image-8.png) no-repeat center/cover;
       &::after {
-        content: "";
+        content: '';
         @include position(absolute, 0, 0, 0, 0);
         background: linear-gradient(
           90deg,
@@ -51,22 +51,22 @@
     position: relative;
     min-height: 359px;
     &::after {
-      content: "";
+      content: '';
       @include position(absolute, 0, 0, null, 0);
       @include size(100%, 100%);
       background: map-get($color, text);
       opacity: 0.5;
     }
     &-item-1 {
-      background: url("../images/Fashion-home-image-5.png") no-repeat
+      background: url('../images/Fashion-home-image-5.png') no-repeat
         center/cover;
     }
     &-item-2 {
-      background: url("../images/Fashion-home-image-6.png") no-repeat
+      background: url('../images/Fashion-home-image-6.png') no-repeat
         center/cover;
     }
     &-item-3 {
-      background: url("../images/Fashion-home-image-7.png") no-repeat
+      background: url('../images/Fashion-home-image-7.png') no-repeat
         center/cover;
     }
     &-content {
@@ -89,7 +89,7 @@
       @include size(68px, 68px);
       margin-bottom: 46px;
       border-radius: 10px;
-      background-color: map-get($color, "white");
+      background-color: map-get($color, 'white');
     }
     &-content {
       max-width: 243px;
@@ -98,7 +98,7 @@
       margin-bottom: 16px;
     }
     &-desc {
-      color: map-get($color, "gray");
+      color: map-get($color, 'gray');
     }
     &-active {
       color: map-get($color, primary);
@@ -119,7 +119,7 @@
       flex: 1;
       padding: 14px 24px;
       border-radius: 50px;
-      font-size: map-get($font-size, "sm");
+      font-size: map-get($font-size, 'sm');
       color: map-get($color, text);
       &::placeholder {
         font-family: $font-family-primary;
@@ -169,7 +169,7 @@
         max-width: 120px;
         min-height: 40px;
         margin-bottom: 8px;
-        font-size: map-get($font-size, "md");
+        font-size: map-get($font-size, 'md');
       }
     }
     .chooseus {
@@ -186,7 +186,7 @@
         max-width: 100%;
       }
       &-desc {
-        font-size: map-get($font-size, "2xs");
+        font-size: map-get($font-size, '2xs');
       }
     }
     .contact {
@@ -196,7 +196,7 @@
       &-title {
         max-width: 200px;
         margin-bottom: 24px;
-        font-size: map-get($font-size, "md");
+        font-size: map-get($font-size, 'md');
         line-height: 21px;
         text-align: left;
       }
@@ -209,7 +209,7 @@
         margin-bottom: 16px;
         padding: 6px 12px;
         &::placeholder {
-          font-size: map-get($font-size, "xs");
+          font-size: map-get($font-size, 'xs');
         }
       }
       &-submit {

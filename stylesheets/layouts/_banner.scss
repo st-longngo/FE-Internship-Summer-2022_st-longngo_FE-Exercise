@@ -11,8 +11,8 @@
   &-title {
     max-width: 403px;
     margin-bottom: 24px;
-    font-size: map-get($font-size, "xxxl");
-    color: map-get($color, "white");
+    font-size: map-get($font-size, 'xxxl');
+    color: map-get($color, 'white');
     line-height: 1;
     span {
       color: map-get($color, primary);
@@ -39,7 +39,7 @@
     max-width: 1316px;
     border-top-right-radius: 70px;
     padding: 38px 88px 24px 0;
-    background-color: map-get($color, "white");
+    background-color: map-get($color, 'white');
   }
 }
 
@@ -63,12 +63,12 @@
     @include size(36px, 36px);
     border-radius: 10px;
     margin-right: 21px;
-    background-color: map-get($color, "orange");
+    background-color: map-get($color, 'orange');
   }
   &-desc {
     margin-top: 5px;
-    font-size: map-get($font-size, "xs");
-    color: map-get($color, "gray-4");
+    font-size: map-get($font-size, 'xs');
+    color: map-get($color, 'gray-4');
   }
 }
 
@@ -81,11 +81,11 @@
       display: none;
     }
     &-title {
-      font-size: map-get($font-size, "xxl");
+      font-size: map-get($font-size, 'xxl');
     }
     &-link {
       &-text {
-        font-size: map-get($font-size, "md");
+        font-size: map-get($font-size, 'md');
       }
     }
   }

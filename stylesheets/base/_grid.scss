@@ -7,7 +7,7 @@
 .row {
   @include flex(null, null, null, wrap);
   margin: 0 -10px;
-  & > [class*="col-"] {
+  & > [class*='col-'] {
     flex: 0 0 auto;
     padding: 0 10px;
   }
@@ -22,7 +22,7 @@
 @include maxWidth(768px) {
   .row {
     margin: 0 -4px;
-    & > [class*="col-"] {
+    & > [class*='col-'] {
       padding: 0 4px;
     }
   }
