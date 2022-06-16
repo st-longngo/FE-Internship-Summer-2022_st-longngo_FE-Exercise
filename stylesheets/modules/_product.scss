@@ -33,26 +33,12 @@
   }
 }
 
-@include maxWidth(992px) {
+@include maxWidth(768px) {
   .product {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     &-image {
       min-height: 227px;
     }
-    &-content {
-      padding: 8px 0;
-    }
-    &-price {
-      span {
-        font-size: map-get($font-size, "md-2");
-      }
-    }
-  }
-}
-
-@include maxWidth(576px) {
-  .product {
-    margin-bottom: 12px;
     &-content {
       padding: 4px 0;
     }

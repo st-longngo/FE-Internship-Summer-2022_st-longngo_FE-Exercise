@@ -17,8 +17,7 @@
       background: url(../images/Fashion-home-image.png) no-repeat center/cover;
       &::after {
         content: "";
-        @include position(absolute, 0, 0, null, 0, 2);
-        @include size(100%, 100%);
+        @include position(absolute, 0, 0, 0, 0, 2);
         background: linear-gradient(
           180deg,
           rgba(0, 0, 0, 0.8) 0%,
@@ -33,13 +32,12 @@
     &-contact {
       position: relative;
       @include flex($items: center);
-      min-height: 240px;
+      height: 241px;
       margin-bottom: 0;
       background: url(../images/Fashion-home-image-8.png) no-repeat center/cover;
       &::after {
         content: "";
-        @include position(absolute, 0, 0, null, 0);
-        @include size(100%, 100%);
+        @include position(absolute, 0, 0, 0, 0);
         background: linear-gradient(
           90deg,
           #000000 33.28%,
@@ -128,63 +126,13 @@
         color: map-get($color, placeholder);
       }
     }
-  }
-}
-
-@include maxWidth(992px) {
-  .home-page {
-    .section {
-      &-title {
-        margin-bottom: 36px;
-      }
-      &-header {
-        margin-bottom: 36px;
-      }
-      &-chooseus {
-        padding: 30px 0;
-      }
-    }
-    .about {
-      margin-top: 12px;
-      min-height: 296px;
-      &-content {
-        padding: 24px;
-      }
-      &-title {
-        min-height: 50px;
-        margin-bottom: 20px;
-      }
-    }
-    .chooseus {
-      @include flex($direction: row);
-      &-thumnail {
-        margin-right: 20px;
-        margin-bottom: 40px;
-      }
-      &-content {
-        flex: 1;
-        width: 100%;
-        max-width: 100%;
-      }
-      &-title {
-        margin-bottom: 8px;
-      }
-      &-desc {
-        font-size: map-get($font-size, "xs");
-      }
-    }
-    .contact {
-      &-inner {
-        @include flex($direction: column);
-      }
-      &-title {
-        margin-bottom: 40px;
-      }
+    &-submit {
+      width: 175px;
     }
   }
 }
 
-@include maxWidth(576px) {
+@include maxWidth(768px) {
   .home-page {
     .section {
       margin-bottom: 24px;
@@ -207,6 +155,7 @@
       &-contact {
         background: url(../images/Fashion-home-image-10.png) no-repeat
           center/cover;
+          height: 217px;
         margin-bottom: 0;
       }
     }
@@ -258,6 +207,10 @@
       }
       &-input {
         margin-bottom: 16px;
+        padding: 6px 12px;
+        &::placeholder {
+          font-size: map-get($font-size, "xs");
+        }
       }
       &-submit {
         max-width: 120px;

@@ -1,3 +1,9 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
 .row {
   @include flex(null, null, null, wrap);
   margin: 0 -10px;
@@ -13,21 +19,7 @@
   }
 }
 
-@include maxWidth(992px) {
-  .row {
-    margin: 0 -6px;
-    & > [class*="col-"] {
-      padding: 0 6px;
-    }
-  }
-  @for $i from 1 through $grid-col {
-    .col-lg-#{$i} {
-      width: calc(100 / ($grid-col / $i)) * 1%;
-    }
-  }
-}
-
-@include maxWidth(576px) {
+@include maxWidth(768px) {
   .row {
     margin: 0 -4px;
     & > [class*="col-"] {
@@ -40,6 +32,3 @@
     }
   }
 }
-
-
-

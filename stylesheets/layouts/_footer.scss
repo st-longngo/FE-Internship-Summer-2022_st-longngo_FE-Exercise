@@ -51,25 +51,11 @@
   }
 }
 
-@include maxWidth(992px) {
+@include maxWidth(768px) {
   .footer {
     &-top {
       padding: 24px 0;
     }
-    &-desc {
-      max-width: 100%;
-    }
-    &-social {
-      display: none;
-    }
-    &-item {
-      align-items: flex-start;
-    }
-  }
-}
-
-@include maxWidth(576px) {
-  .footer {
     &-list {
       @include flex($direction: column);
     }
@@ -89,6 +75,9 @@
       &-link {
         font-size: map-get($font-size, "xs");
       }
+    }
+    &-item {
+      align-items: flex-start;
     }
   }
 }

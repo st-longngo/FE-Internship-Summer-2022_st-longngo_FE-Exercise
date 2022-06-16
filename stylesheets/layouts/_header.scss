@@ -49,15 +49,11 @@
   }
 }
 
-@include maxWidth(992px) {
+@include maxWidth(768px) {
   .header {
-    padding: 40px;
-    &-extra {
-      margin-right: 0;
-      #search {
-        display: none;
-      }
-    }
+    position: fixed;
+    padding: 20px 0;
+    background-color: map-get($color, "white");
     .logo {
       a {
         color: map-get($color, text);
@@ -67,6 +63,14 @@
       img {
         @include size(100%, 100%);
         object-fit: cover;
+        filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+          hue-rotate(35deg) brightness(90%) contrast(90%);
+      }
+    }
+    &-extra {
+      margin-right: 0;
+      #search {
+        display: none;
       }
     }
   }
@@ -86,11 +90,11 @@
     overflow: hidden;
     &-active {
       display: flex;
-      height: 200px;
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
+      height: 200px;
       .nav-menu {
-        @include flex(column, center, center, null);
+        @include flex(column, center, center);
         gap: 30px 0;
         @include size(100%);
       }
@@ -99,12 +103,14 @@
   .extra {
     &-icon {
       @include size(20px, 20px);
+      filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+        hue-rotate(35deg) brightness(90%) contrast(90%);
     }
     &-control {
       @include flex($content: center, $items: center);
       @include size(20px, 20px);
-      filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%)
-        hue-rotate(245deg) brightness(121%) contrast(97%);
+      filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+        hue-rotate(35deg) brightness(90%) contrast(90%);
       #close {
         display: none;
       }
@@ -119,37 +125,6 @@
       #hamburger {
         display: none;
       }
-    }
-  }
-}
-
-@include maxWidth(576px) {
-  .header {
-    position: fixed;
-    padding: 20px 0;
-    background-color: map-get($color, "white");
-    .logo {
-      a {
-        color: map-get($color, text);
-        font-size: map-get($font-size, "md-2");
-      }
-      img {
-        filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
-          hue-rotate(35deg) brightness(90%) contrast(90%);
-      }
-    }
-  }
-  .extra {
-    &-icon {
-      @include size(20px, 20px);
-      filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
-        hue-rotate(35deg) brightness(90%) contrast(90%);
-    }
-    &-control {
-      @include flex($content: center, $items: center);
-      @include size(20px, 20px);
-      filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
-        hue-rotate(35deg) brightness(90%) contrast(90%);
     }
   }
 }

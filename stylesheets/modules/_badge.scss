@@ -9,7 +9,7 @@
   }
 }
 
-@include maxWidth(576px) {
+@include maxWidth(768px) {
   .badge {
     font-size: map-get($font-size, "3xs");
     padding: 4px 6px;

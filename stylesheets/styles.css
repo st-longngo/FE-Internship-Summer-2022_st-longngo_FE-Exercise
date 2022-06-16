@@ -34,6 +34,13 @@ button {
   cursor: pointer;
 }
 
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -92,51 +99,7 @@ button {
   width: 100%;
 }
 
-@media only screen and (max-width: 992px) {
-  .row {
-    margin: 0 -6px;
-  }
-  .row > [class*=col-] {
-    padding: 0 6px;
-  }
-  .col-lg-1 {
-    width: 8.3333333333%;
-  }
-  .col-lg-2 {
-    width: 16.6666666667%;
-  }
-  .col-lg-3 {
-    width: 25%;
-  }
-  .col-lg-4 {
-    width: 33.3333333333%;
-  }
-  .col-lg-5 {
-    width: 41.6666666667%;
-  }
-  .col-lg-6 {
-    width: 50%;
-  }
-  .col-lg-7 {
-    width: 58.3333333333%;
-  }
-  .col-lg-8 {
-    width: 66.6666666667%;
-  }
-  .col-lg-9 {
-    width: 75%;
-  }
-  .col-lg-10 {
-    width: 83.3333333333%;
-  }
-  .col-lg-11 {
-    width: 91.6666666667%;
-  }
-  .col-lg-12 {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .row {
     margin: 0 -4px;
   }
@@ -205,20 +168,7 @@ button {
   line-height: 24px;
 }
 
-@media only screen and (max-width: 992px) {
-  .txt-title {
-    font-size: 24px;
-  }
-  .typo-1 {
-    font-size: 14px;
-    line-height: 26px;
-  }
-  .typo-2 {
-    font-size: 14px;
-    line-height: 22px;
-  }
-}
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .txt-title {
     font-size: 18px;
   }
@@ -242,7 +192,7 @@ button {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .badge {
     font-size: 8px;
     padding: 4px 6px;
@@ -269,19 +219,16 @@ button {
   border: 1px solid #c4c4c4;
 }
 
-@media only screen and (max-width: 992px) {
-  .btn {
-    padding: 6px 12px;
-    font-size: 12px;
-  }
-}
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .btn {
     padding: 4px 10px;
     font-size: 10px;
   }
   .btn.btn-border {
     border: 0;
+  }
+  .btn.btn-secondary {
+    padding: 7px 20px;
   }
 }
 .product {
@@ -320,23 +267,12 @@ button {
   left: 18px;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .product {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
   .product-image {
     min-height: 227px;
-  }
-  .product-content {
-    padding: 8px 0;
-  }
-  .product-price span {
-    font-size: 16px;
-  }
-}
-@media only screen and (max-width: 576px) {
-  .product {
-    margin-bottom: 12px;
   }
   .product-content {
     padding: 4px 0;
@@ -349,13 +285,6 @@ button {
     left: 8px;
   }
 }
-.container {
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 24px;
-  margin: 0 auto;
-}
-
 .header {
   position: absolute;
   top: 0;
@@ -411,15 +340,11 @@ button {
   background-color: transparent;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .header {
-    padding: 40px;
-  }
-  .header-extra {
-    margin-right: 0;
-  }
-  .header-extra #search {
-    display: none;
+    position: fixed;
+    padding: 20px 0;
+    background-color: #ffffff;
   }
   .header .logo a {
     color: #333333;
@@ -431,6 +356,13 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
+  }
+  .header-extra {
+    margin-right: 0;
+  }
+  .header-extra #search {
+    display: none;
   }
   .nav {
     position: absolute;
@@ -448,9 +380,9 @@ button {
   }
   .nav-active {
     display: flex;
-    height: 200px;
-    opacity: 1;
     visibility: visible;
+    opacity: 1;
+    height: 200px;
   }
   .nav-active .nav-menu {
     display: flex;
@@ -463,6 +395,7 @@ button {
   .extra-icon {
     width: 20px;
     height: 20px;
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
   }
   .extra-control {
     display: flex;
@@ -470,7 +403,7 @@ button {
     align-items: center;
     width: 20px;
     height: 20px;
-    filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
   }
   .extra-control #close {
     display: none;
@@ -485,37 +418,9 @@ button {
     display: none;
   }
 }
-@media only screen and (max-width: 576px) {
-  .header {
-    position: fixed;
-    padding: 20px 0;
-    background-color: #ffffff;
-  }
-  .header .logo a {
-    color: #333333;
-    font-size: 16px;
-  }
-  .header .logo img {
-    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
-  }
-  .extra-icon {
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
-  }
-  .extra-control {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
-  }
-}
 .banner-inner {
   position: relative;
   z-index: 3;
-  width: 100%;
   height: 100%;
   padding-left: 111px;
 }
@@ -523,7 +428,6 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   height: 100%;
 }
 .banner-title {
@@ -551,9 +455,6 @@ button {
   background-color: #fbb03b;
 }
 .banner-link-text {
-  color: #ffffff;
-  font-size: 24px;
-  font-weight: 700;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -603,24 +504,7 @@ button {
   color: #a8a8a8;
 }
 
-@media only screen and (max-width: 992px) {
-  .banner-policy {
-    width: 100%;
-    border-top-right-radius: 0;
-    padding: 30px 40px;
-    justify-content: center;
-  }
-  .banner-title {
-    font-size: 60px;
-  }
-  .banner-link-text {
-    font-size: 20px;
-  }
-  .policy-item {
-    margin-right: 30px;
-  }
-}
-@media only screen and (max-width: 576px) {
+@media only screen and (max-width: 768px) {
   .banner-inner {
     padding-left: 24px;
   }
@@ -686,21 +570,10 @@ button {
   font-size: 12px;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 768px) {
   .footer-top {
     padding: 24px 0;
   }
-  .footer-desc {
-    max-width: 100%;
-  }
-  .footer-social {
-    display: none;
-  }
-  .footer-item {
-    align-items: flex-start;
-  }
-}
-@media only screen and (max-width: 576px) {
   .footer-list {
     display: flex;
     flex-direction: column;
@@ -720,6 +593,9 @@ button {
   }
   .footer-sub-link {
     font-size: 12px;
+  }
+  .footer-item {
+    align-items: flex-start;
   }
 }
 .txt-bold {
@@ -756,10 +632,9 @@ button {
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
   z-index: 2;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.5) 100%);
 }
 .home-page .section-chooseus {
@@ -770,7 +645,7 @@ button {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: 240px;
+  height: 241px;
   margin-bottom: 0;
   background: url(../images/Fashion-home-image-8.png) no-repeat center/cover;
 }
@@ -779,9 +654,8 @@ button {
   position: absolute;
   top: 0;
   right: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background: linear-gradient(90deg, #000000 33.28%, rgba(0, 0, 0, 0) 94.05%);
   opacity: 0.7;
 }
@@ -873,56 +747,11 @@ button {
   font-family: "Poppins", sans-serif;
   color: #ababab;
 }
-
-@media only screen and (max-width: 992px) {
-  .home-page .section-title {
-    margin-bottom: 36px;
-  }
-  .home-page .section-header {
-    margin-bottom: 36px;
-  }
-  .home-page .section-chooseus {
-    padding: 30px 0;
-  }
-  .home-page .about {
-    margin-top: 12px;
-    min-height: 296px;
-  }
-  .home-page .about-content {
-    padding: 24px;
-  }
-  .home-page .about-title {
-    min-height: 50px;
-    margin-bottom: 20px;
-  }
-  .home-page .chooseus {
-    display: flex;
-    flex-direction: row;
-  }
-  .home-page .chooseus-thumnail {
-    margin-right: 20px;
-    margin-bottom: 40px;
-  }
-  .home-page .chooseus-content {
-    flex: 1;
-    width: 100%;
-    max-width: 100%;
-  }
-  .home-page .chooseus-title {
-    margin-bottom: 8px;
-  }
-  .home-page .chooseus-desc {
-    font-size: 12px;
-  }
-  .home-page .contact-inner {
-    display: flex;
-    flex-direction: column;
-  }
-  .home-page .contact-title {
-    margin-bottom: 40px;
-  }
+.home-page .form-submit {
+  width: 175px;
 }
-@media only screen and (max-width: 576px) {
+
+@media only screen and (max-width: 768px) {
   .home-page .section {
     margin-bottom: 24px;
   }
@@ -944,6 +773,7 @@ button {
   }
   .home-page .section-contact {
     background: url(../images/Fashion-home-image-10.png) no-repeat center/cover;
+    height: 217px;
     margin-bottom: 0;
   }
   .home-page .about {
@@ -994,6 +824,10 @@ button {
   }
   .home-page .form-input {
     margin-bottom: 16px;
+    padding: 6px 12px;
+  }
+  .home-page .form-input::placeholder {
+    font-size: 12px;
   }
   .home-page .form-submit {
     max-width: 120px;

@@ -23,21 +23,7 @@
   line-height: 24px;
 }
 
-@include maxWidth(992px) {
-  .txt-title {
-    font-size: map-get($font-size, "lg");
-  }
-  .typo-1 {
-    font-size: map-get($font-size, "md");
-    line-height: 26px;
-  }
-  .typo-2 {
-    font-size: map-get($font-size, "md");
-    line-height: 22px;
-  }
-}
-
-@include maxWidth(576px) {
+@include maxWidth(768px) {
   .txt-title {
     font-size: map-get($font-size, "md-2-5");
   }

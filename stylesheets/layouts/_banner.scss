@@ -1,12 +1,12 @@
 .banner {
   &-inner {
     @include position($namePosition: relative, $zIndex: 3);
-    @include size(100%, 100%);
+    height: 100%; 
     padding-left: 111px;
   }
   &-content {
     @include flex(column, center);
-    @include size(100%, 100%);
+    height: 100%;
   }
   &-title {
     max-width: 403px;
@@ -28,9 +28,6 @@
       background-color: map-get($color, primary);
     }
     &-text {
-      color: map-get($color, "white");
-      font-size: map-get($font-size, "lg");
-      font-weight: map-get($font-weight, "bold");
       text-transform: uppercase;
       text-decoration: underline;
     }
@@ -75,31 +72,7 @@
   }
 }
 
-@include maxWidth(992px) {
-  .banner {
-    &-policy {
-      @include size(100%);
-      border-top-right-radius: 0;
-      padding: 30px 40px;
-      justify-content: center;
-    }
-    &-title {
-      font-size: map-get($font-size, "2xxl");
-    }
-    &-link {
-      &-text {
-        font-size: map-get($font-size, "md-3");
-      }
-    }
-  }
-  .policy {
-    &-item {
-      margin-right: 30px;
-    }
-  }
-}
-
-@include maxWidth(576px) {
+@include maxWidth(768px) {
   .banner {
     &-inner {
       padding-left: 24px;
