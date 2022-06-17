@@ -1,9 +1,5 @@
 .home-page {
   .section {
-    margin-bottom: 48px;
-    &-title {
-      margin-bottom: 40px;
-    }
     &-header {
       @include flex($content: space-between, $items: center);
       margin-bottom: 40px;
@@ -24,6 +20,9 @@
           rgba(0, 0, 0, 0.5) 100%
         );
       }
+    }
+    &-about {
+      margin-bottom: 96px;
     }
     &-chooseus {
       padding: 48px 0 54px 0;
@@ -135,16 +134,15 @@
 @include maxWidth(768px) {
   .home-page {
     .section {
-      margin-bottom: 24px;
-      &-title {
-        margin-bottom: 16px;
-      }
       &-header {
         margin-bottom: 16px;
       }
       &-banner {
         @include size(null, 740px);
         background-image: url(../images/Fashion-home-image-9.png);
+      }
+      &-about {
+        margin-bottom: 48px;
       }
       &-chooseus {
         padding: 24px 0;

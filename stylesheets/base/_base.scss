@@ -33,3 +33,20 @@ textarea {
 button {
   cursor: pointer;
 }
+
+section {
+  margin-bottom: 48px;
+}
+
+section h3 {
+  margin-bottom: 40px;
+}
+
+@include maxWidth(768px) {
+  section {
+    margin-bottom: 24px;
+  }
+  section h3 {
+    margin-bottom: 16px;
+  }
+}

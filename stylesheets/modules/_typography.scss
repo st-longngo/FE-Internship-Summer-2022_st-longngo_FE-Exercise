@@ -1,3 +1,11 @@
+h2 {
+  font-size: map-get($font-size, 'xxxl');
+}
+
+h3 {
+  font-size: map-get($font-size, 'xl');
+}
+
 .txt-title {
   font-size: map-get($font-size, 'xl');
   font-weight: map-get($font-weight, 'light');
@@ -21,6 +29,7 @@
 .typo-2 {
   font-size: map-get($font-size, 'md-2');
   line-height: 24px;
+  color: map-get($color, text);
 }
 
 @include maxWidth(768px) {
