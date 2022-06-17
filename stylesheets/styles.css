@@ -335,6 +335,21 @@ h3 {
   filter: brightness(0) saturate(100%) invert(99%) sepia(0%) saturate(7466%) hue-rotate(245deg) brightness(121%) contrast(97%);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 0;
+  background-color: #ffffff;
+  transition: 0.3s linear;
+}
+.sticky .logo img {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
+}
+.sticky .extra-icon {
+  filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
@@ -428,7 +443,6 @@ h3 {
     align-items: center;
     width: 20px;
     height: 20px;
-    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%) hue-rotate(35deg) brightness(90%) contrast(90%);
   }
   .extra-control #close {
     display: none;

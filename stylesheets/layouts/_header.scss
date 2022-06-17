@@ -18,6 +18,22 @@
     }
   }
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 30px 0;
+  background-color: map-get($color, 'white');
+  transition: 0.3s linear;
+  & .logo img {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+    hue-rotate(35deg) brightness(90%) contrast(90%);
+  }
+  .extra-icon {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
+    hue-rotate(35deg) brightness(90%) contrast(90%);
+  }
+}
 .nav {
   &-menu {
     @include flex($items: center);
@@ -109,8 +125,6 @@
     &-control {
       @include flex($content: center, $items: center);
       @include size(20px, 20px);
-      filter: brightness(0) saturate(100%) invert(18%) sepia(8%) saturate(16%)
-        hue-rotate(35deg) brightness(90%) contrast(90%);
       #close {
         display: none;
       }
