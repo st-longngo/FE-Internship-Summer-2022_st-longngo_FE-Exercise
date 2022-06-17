@@ -1,4 +1,7 @@
-// 6
+// 6. Write a function to generate a random hexa color code.
+// Input: ()
+// Output: string
+// Ex: () => #1a7b9d
 
 function randomHexa() {
   let string = "0123456789abcdef";
