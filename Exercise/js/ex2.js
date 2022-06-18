@@ -3,9 +3,5 @@
 // Output: the new string
 // Ex: ("FE", 4) => 'FEFEFEFE'
 function reapeatString(string, time) {
-  let str = "";
-  for (let i = 0; i < time; i++) {
-    str += string;
-  }
-  return str;
+  return string.reapeat(time);
 }

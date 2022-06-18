@@ -5,7 +5,7 @@
 // Ex: ('23:30:29', 6000) => '01:10:29'
 
 function findTime(time, num) {
-  let arr = time.split(":");
+  let arr = time.split(':');
   let [h, m, s] = arr;
   h = (+h + Math.floor((+m + Math.floor((num + +s) / 60)) / 60)) % 24;
   m = (+m + Math.floor((num + +s) / 60)) % 60;
