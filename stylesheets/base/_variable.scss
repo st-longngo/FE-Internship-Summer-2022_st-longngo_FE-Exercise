@@ -1,0 +1,41 @@
+$grid-col: 12;
+$font-family-primary: "Poppins", sans-serif;
+$mobile: 768px;
+
+$color: (
+  primary: #fbb03b,
+  secondary: #ff0000,
+  text: #333333,
+  placeholder: #ababab,
+  'gray': #808080,
+  'gray-2': #cecece,
+  'gray-3': #f6f6f6,
+  'gray-4': #a8a8a8,
+  'gray-5': #c4c4c4,
+  'gray-6': #f7f7f7,
+  'orange': #fff3df,
+  'white': #ffffff,
+);
+
+$font-size: (
+  '3xs': 8px,
+  '2xs': 10px,
+  'xs': 12px,
+  'sm': 13px,
+  'md': 14px,
+  'md-2': 16px,
+  'md-2-5': 18px,
+  'md-3': 20px,
+  'lg': 24px,
+  'xl': 32px,
+  'xxl': 48px,
+  '2xxl': 60px,
+  'xxxl': 72px,
+);
+
+$font-weight: (
+  'light': 300,
+  'regular': 400,
+  'medium': 500,
+  'bold': 700,
+);

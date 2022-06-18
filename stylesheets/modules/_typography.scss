@@ -1,0 +1,47 @@
+h2 {
+  font-size: map-get($font-size, 'xxxl');
+}
+
+h3 {
+  font-size: map-get($font-size, 'xl');
+}
+
+.txt-title {
+  font-size: map-get($font-size, 'xl');
+  font-weight: map-get($font-weight, 'light');
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sub-title {
+  font-weight: map-get($font-weight, 'bold');
+  font-size: map-get($font-size, 'md-2');
+  color: map-get($color, 'white');
+}
+
+.typo-1 {
+  color: map-get($color, 'white');
+  font-size: map-get($font-size, 'lg');
+  font-weight: map-get($font-weight, 'regular');
+  line-height: 36px;
+}
+
+.typo-2 {
+  font-size: map-get($font-size, 'md-2');
+  line-height: 24px;
+  color: map-get($color, text);
+}
+
+@include maxWidth($mobile) {
+  .txt-title {
+    font-size: map-get($font-size, 'md-2-5');
+  }
+  .typo-1 {
+    font-size: map-get($font-size, 'md-3');
+    line-height: 21px;
+  }
+  .typo-2 {
+    font-size: map-get($font-size, 'xs');
+    line-height: 18px;
+  }
+}

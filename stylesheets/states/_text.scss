@@ -1,0 +1,7 @@
+.txt-bold {
+  font-weight: map-get($font-weight, 'bold');
+}
+
+.txt-light {
+  font-weight: map-get($font-weight, 'light');
+}

@@ -1,0 +1,55 @@
+.product {
+  position: relative;
+  &-link {
+    display: block;
+  }
+  &-image {
+    @include size(100%, 100%);
+    display: block;
+    object-fit: cover;
+  }
+  &-content {
+    padding: 16px 0;
+  }
+  &-price {
+    @include flex($content: space-between, $items: center);
+    span {
+      font-size: map-get($font-size, 'md-3');
+      font-weight: map-get($font-weight, 'regular');
+    }
+  }
+  &-sale {
+    .product-price {
+      span {
+        color: map-get($color, secondary);
+      }
+      .product-discount {
+        color: map-get($color, 'gray-2');
+      }
+    }
+  }
+  &-badge {
+    @include position($namePosition: absolute, $top: 24px, $left: 18px);
+  }
+}
+
+@include maxWidth($mobile) {
+  .product {
+    margin-bottom: 12px;
+    &-image {
+      min-height: 227px;
+    }
+    &-content {
+      padding: 4px 0;
+    }
+    &-price {
+      span {
+        font-size: map-get($font-size, '2xs');
+      }
+    }
+    &-badge {
+      top: 14px;
+      left: 8px;
+    }
+  }
+}

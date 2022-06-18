@@ -1,0 +1,34 @@
+.container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+}
+.row {
+  @include flex(null, null, null, wrap);
+  margin: 0 -10px;
+  & > [class*='col-'] {
+    flex: 0 0 auto;
+    padding: 0 10px;
+  }
+}
+
+@for $i from 1 through $grid-col {
+  .col-#{$i} {
+    width: calc(100 / ($grid-col / $i)) * 1%;
+  }
+}
+
+@include maxWidth($mobile) {
+  .row {
+    margin: 0 -4px;
+    & > [class*='col-'] {
+      padding: 0 4px;
+    }
+  }
+  @for $i from 1 through $grid-col {
+    .col-sm-#{$i} {
+      width: calc(100 / ($grid-col / $i)) * 1%;
+    }
+  }
+}

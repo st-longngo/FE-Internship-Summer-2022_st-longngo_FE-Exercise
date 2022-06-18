@@ -1,0 +1,33 @@
+.btn {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: map-get($font-weight, 'bold');
+  font-size: map-get($font-size, 'sm');
+  color: map-get($color, text);
+  text-transform: uppercase;
+  &.btn-primary {
+    background-color: map-get($color, 'white');
+  }
+  &.btn-secondary {
+    padding: 14px 30px;
+    background-color: map-get($color, primary);
+  }
+  &.btn-border {
+    background-color: map-get($color, 'white');
+    border: 1px solid map-get($color, 'gray-5');
+  }
+}
+
+@include maxWidth($mobile) {
+  .btn {
+    padding: 4px 10px;
+    font-size: map-get($font-size, '2xs');
+    &.btn-border {
+      border: 0;
+    }
+    &.btn-secondary {
+      padding: 7px 20px;
+    }
+  }
+}

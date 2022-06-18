@@ -1,0 +1,92 @@
+.banner {
+  &-inner {
+    @include position($namePosition: relative, $zIndex: 3);
+    height: 100%; 
+    padding-left: 111px;
+  }
+  &-content {
+    @include flex(column, center);
+    height: 100%;
+  }
+  &-title {
+    max-width: 403px;
+    margin-bottom: 24px;
+    font-size: map-get($font-size, 'xxxl');
+    color: map-get($color, 'white');
+    line-height: 1;
+    span {
+      color: map-get($color, primary);
+    }
+  }
+  &-link {
+    @include flex($items: center);
+    &-icon {
+      @include flex($content: center, $items: center);
+      @include size(36px, 36px);
+      border-radius: 50%;
+      margin-right: 21px;
+      background-color: map-get($color, primary);
+    }
+    &-text {
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+  }
+  &-policy {
+    @include position(absolute, null, 0, 0, 0, 3);
+    @include flex($content: flex-end, $items: center);
+    @include size(76%);
+    max-width: 1316px;
+    border-top-right-radius: 70px;
+    padding: 38px 88px 24px 0;
+    background-color: map-get($color, 'white');
+  }
+}
+
+.policy {
+  &-list {
+    display: flex;
+  }
+  &-item {
+    display: flex;
+    max-width: 237px;
+    margin-right: 48px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+  &-content {
+    flex: 1;
+  }
+  &-icon {
+    @include flex($content: center, $items: center);
+    @include size(36px, 36px);
+    border-radius: 10px;
+    margin-right: 21px;
+    background-color: map-get($color, 'orange');
+  }
+  &-desc {
+    margin-top: 5px;
+    font-size: map-get($font-size, 'xs');
+    color: map-get($color, 'gray-4');
+  }
+}
+
+@include maxWidth($mobile) {
+  .banner {
+    &-inner {
+      padding-left: 24px;
+    }
+    &-policy {
+      display: none;
+    }
+    &-title {
+      font-size: map-get($font-size, 'xxl');
+    }
+    &-link {
+      &-text {
+        font-size: map-get($font-size, 'md');
+      }
+    }
+  }
+}

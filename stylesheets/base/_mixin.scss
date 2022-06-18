@@ -1,0 +1,34 @@
+@mixin flex($direction: null, $content: null, $items: null, $wrap: null) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $content;
+  align-items: $items;
+  flex-wrap: $wrap;
+}
+
+@mixin size($width: null, $height: null) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position(
+  $namePosition: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null,
+  $zIndex: null
+) {
+  position: $namePosition;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+  z-index: $zIndex;
+}
+
+@mixin maxWidth($breakpoint) {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}

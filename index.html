@@ -15,63 +15,77 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="common.css" />
-    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="common.css" /> -->
+    <link rel="stylesheet" href="./stylesheets/styles.css" />
   </head>
   <body>
-    <header class="header">
-      <div class="container header-inner">
-        <h1 class="logo">
-          <a href="#">
-            <img src="./images/Logo.svg" alt="Eshop Logo" />
-          </a>
-        </h1>
-        <nav class="nav">
-          <ul class="nav-menu">
-            <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="#">
+              <img src="./images/Logo.svg" alt="Eshop" />
+            </a>
+          </h1>
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+            </ul>
+          </nav>
+          <ul class="header-extra">
+            <li class="extra-item" id="search">
+              <a href="#" id="search" class="extra-link">
+                <img
+                  src="./images/search.svg"
+                  alt="search"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="#" id="cart" class="extra-link">
+                <img src="./images/cart.svg" alt="cart" class="extra-icon" />
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="#" id="person" class="extra-link">
+                <img
+                  src="./images/avatar.svg"
+                  alt="avatar"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <button class="extra-control">
+                <img
+                  src="./images/hamburger.svg"
+                  alt="hamburger"
+                  id="hamburger"
+                />
+                <img src="./images/close.svg" alt="close" id="close" />
+              </button>
+            </li>
           </ul>
-        </nav>
-        <ul class="header-extra">
-          <li class="extra-item" id="search">
-            <a href="#" id="search" class="extra-link">
-              <img src="./images/search.svg" alt="search" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <a href="#" id="cart" class="extra-link">
-              <img src="./images/cart.svg" alt="cart" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <a href="#" id="person" class="extra-link">
-              <img src="./images/avatar.svg" alt="avatar" class="extra-icon" />
-            </a>
-          </li>
-          <li class="extra-item">
-            <button class="extra-control">
-              <img src="./images/hamburger.svg" alt="hamburger" id="hamburger"/>
-              <img src="./images/close.svg" alt="close" id="close">
-            </button>
-          </li>
-        </ul>
+        </div>
       </div>
     </header>
-    <main>
+    <main class="home-page">
       <section class="section section-banner">
         <div class="container banner-inner">
           <div class="banner-content">
-            <h2 class="banner-title">
+            <h2 class="txt-bold banner-title">
               Sale of the
               <span>summer</span>
               collection
             </h2>
-            <a href="#" class="content-link">
-              <div class="content-link-icon">
-                <img src="./images/arrow-left.png" alt="icon arrow left" />
+            <a href="#" class="banner-link">
+              <div class="banner-link-icon">
+                <img src="./images/arrow-left.png" alt="arrow left" />
               </div>
-              <span class="content-link-text">shop now</span>
+              <span class="typo-1 txt-bold banner-link-text">shop now</span>
             </a>
           </div>
         </div>
@@ -79,19 +93,19 @@
           <ul class="policy-list">
             <li class="policy-item">
               <div class="policy-icon">
-                <img src="./images/freeshipping.svg" alt="free shipping" />
+                <img src="./images/freeshipping.svg" alt="Free Shipping" />
               </div>
               <div class="policy-content">
-                <h4 class="policy-title">Free Shipping</h4>
+                <h4 class="txt-bold policy-title">Free Shipping</h4>
                 <p class="text policy-desc">On purchase over $199</p>
               </div>
             </li>
             <li class="policy-item">
               <div class="policy-icon">
-                <img src="./images/happy.svg" alt="Satisfied Customers" />
+                <img src="./images/happy.svg" alt="99% Satisfied Customers" />
               </div>
               <div class="policy-content">
-                <h4 class="policy-title">99% Satisfied Customers</h4>
+                <h4 class="txt-bold policy-title">99% Satisfied Customers</h4>
                 <p class="text policy-desc">
                   Our clients opinions speak for themselves
                 </p>
@@ -105,7 +119,7 @@
                 />
               </div>
               <div class="policy-content">
-                <h4 class="policy-title">Originality Guaranteed</h4>
+                <h4 class="txt-bold policy-title">Originality Guaranteed</h4>
                 <p class="policy-desc">
                   30 days warranty for each product from our store
                 </p>
@@ -120,7 +134,7 @@
             <li class="col-6 col-sm-12">
               <div class="about about-item-1">
                 <div class="about-content">
-                  <h4 class="about-title">New arrivalsare now in!</h4>
+                  <h4 class="typo-1 about-title">New arrivalsare now in!</h4>
                   <div class="about-link">
                     <a href="" class="btn btn-primary btn-about">
                       Show Collection
@@ -132,7 +146,7 @@
             <li class="col-3 col-sm-6">
               <div class="about about-item-2">
                 <div class="about-content">
-                  <h4 class="about-title">Basic t-shirts $29,99</h4>
+                  <h4 class="typo-1 about-title">Basic t-shirts $29,99</h4>
                   <div class="about-link">
                     <a href="" class="btn btn-primary btn-about">
                       MORE DETAILS
@@ -147,7 +161,7 @@
                   <div class="about-badge">
                     <span class="badge badge-primary">-50%</span>
                   </div>
-                  <h4 class="about-title">Sale this summer</h4>
+                  <h4 class="typo-1 about-title">Sale this summer</h4>
                   <div class="about-link">
                     <a href="" class="btn btn-primary btn-about"> VIEW ALL </a>
                   </div>
@@ -160,7 +174,7 @@
       <section class="section section-product-selected">
         <div class="container">
           <div class="section-header">
-            <h3 class="section-title">Selected just for you</h3>
+            <h3 class="txt-title section-title">Selected just for you</h3>
             <a href="" class="btn btn-border">show more</a>
           </div>
           <div class="section-content">
@@ -179,7 +193,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">T-Shirt Summer Vibes</a>
+                      <a href="" class="typo-2 txt-light"
+                        >T-Shirt Summer Vibes</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$89.99</span>
@@ -201,7 +217,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Loose Knit 3/4 Sleeve</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Loose Knit 3/4 Sleeve</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$119.99</span>
@@ -222,7 +240,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Basic Slim Fit T-Shirt</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Basic Slim Fit T-Shirt</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$79.99</span>
@@ -243,7 +263,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Loose Textured T-Shirt</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Loose Textured T-Shirt</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$119.99</span>
@@ -257,17 +279,17 @@
       </section>
       <section class="section section-chooseus">
         <div class="container">
-          <h3 class="section-title">why should you choose us</h3>
+          <h3 class="txt-title section-title">why should you choose us</h3>
           <div class="section-content">
             <ul class="row">
               <li class="col-3 col-sm-12">
                 <div class="chooseus">
                   <div class="chooseus-thumnail">
-                    <img src="./images/Free-Shipping.svg" alt="free shipping" />
+                    <img src="./images/Free-Shipping.svg" alt="Free Shipping" />
                   </div>
                   <div class="chooseus-content">
-                    <h4 class="chooseus-title">free shipping</h4>
-                    <p class="text chooseus-desc">
+                    <h4 class="typo-2 chooseus-title">Free Shipping</h4>
+                    <p class="chooseus-desc">
                       All purchases over $199 are eligible forfree shipping via
                       USPS First Class Mail.
                     </p>
@@ -280,7 +302,7 @@
                     <img src="./images/payment.svg" alt="Payments" />
                   </div>
                   <div class="chooseus-content">
-                    <h3 class="chooseus-title">Easy Payments</h3>
+                    <h3 class="typo-2 chooseus-title">Easy Payments</h3>
                     <p class="chooseus-desc">
                       All payments are processed instantlyover a secure payment
                       protocol.
@@ -297,7 +319,7 @@
                     />
                   </div>
                   <div class="chooseus-content">
-                    <h4 class="chooseus-title">Money-Back Guarantee</h4>
+                    <h4 class="typo-2 chooseus-title">Money-Back Guarantee</h4>
                     <p class="text chooseus-desc">
                       If an item arrived damaged or you've changed your mind,
                       you can send itback for a full refund.
@@ -311,8 +333,8 @@
                     <img src="./images/materials.svg" alt="Finest Quality" />
                   </div>
                   <div class="chooseus-content">
-                    <h4 class="chooseus-title">Finest Quality</h4>
-                    <p class="text chooseus-desc">
+                    <h4 class="typo-2 chooseus-title">Finest Quality</h4>
+                    <p class="chooseus-desc">
                       Designed to last, each of our products hasbeen crafted
                       with the finest materials.
                     </p>
@@ -325,7 +347,7 @@
       </section>
       <section class="section section-product-today">
         <div class="container">
-          <h3 class="section-title">Products in today</h3>
+          <h3 class="txt-title section-title">Products in today</h3>
           <div class="section-content">
             <ul class="row">
               <li class="col-3 col-sm-6">
@@ -342,7 +364,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href=""> T-Shirt Summer Vibes</a>
+                      <a href="" class="typo-2 txt-light">
+                        T-Shirt Summer Vibes</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$89.99</span>
@@ -364,7 +388,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Loose Knit 3/4 Sleeve</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Loose Knit 3/4 Sleeve</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$119.99</span>
@@ -385,7 +411,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Basic Slim Fit T-Shirt</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Basic Slim Fit T-Shirt</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$79.99</span>
@@ -406,7 +434,9 @@
                   </div>
                   <div class="product-content">
                     <h4 class="product-name">
-                      <a href="">Loose Textured T-Shirt</a>
+                      <a href="" class="typo-2 txt-light"
+                        >Loose Textured T-Shirt</a
+                      >
                     </h4>
                     <div class="product-price">
                       <span>$119.99</span>
@@ -419,62 +449,65 @@
         </div>
       </section>
       <section class="section-contact section">
-        <div class="container contact-inner">
-          <div class="col-6 col-sm-12">
-            <h3 class="contact-title">
-              Subscribe to our newsletter andreceive exclusive offers every week
-            </h3>
-          </div>
-          <div class="col-6 col-sm-12">
-            <form action="" class="form-group">
-              <input
-                type="text"
-                class="form-input"
-                placeholder="Enter you email"
-              />
-              <button type="submit" class="btn btn-secondary form-submit">
-                SUBSCRIBE
-              </button>
-            </form>
+        <div class="container">
+          <div class="row contact-inner">
+            <div class="col-6 col-sm-12">
+              <h4 class="typo-1 contact-title">
+                Subscribe to our newsletter andreceive exclusive offers every
+                week
+              </h4>
+            </div>
+            <div class="col-6 col-sm-12">
+              <form action="" class="form-group">
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter you email"
+                />
+                <button type="submit" class="btn btn-secondary form-submit">
+                  SUBSCRIBE
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="footer-top border-bottom">
+      <div class="footer-top">
         <div class="container">
           <div class="row footer-list">
             <div class="col-5 col-sm-12 footer-iso">
-              <a href="" class="footer-iso-logo">
-                <img src="./images/logo.svg" alt="E-Shop" />
+              <a href="#" class="footer-logo">
+                <img src="./images/Logo.svg" alt="E-Shop" />
               </a>
-              <p class="footer-iso-desc">
+              <p class="footer-desc">
                 House My Brand designs clothing for the young, the old &everyone
                 in between – but most importantly, for the fashionable
               </p>
-              <ul class="footer-iso-social">
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+              <ul class="footer-social">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-facebook"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-twitter"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-linkedin"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-instagram"></i>
                   </a>
                 </li>
-                <li class="iso-social-item">
-                  <a href="" class="iso-social-link">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
                     <i class="bx bxl-youtube"></i>
                   </a>
                 </li>
@@ -484,9 +517,7 @@
               <li class="col-4 col-sm-12 footer-item">
                 <ul class="footer-sub-list">
                   <li class="footer-sub-item">
-                    <span class="footer-sub-link sub-title"
-                      >Shopping online</span
-                    >
+                    <span class="sub-title">Shopping online</span>
                   </li>
                   <li class="footer-sub-item">
                     <a href="" class="footer-sub-link sub-link">Order Status</a>
@@ -512,7 +543,7 @@
               <li class="col-4 col-sm-12 footer-item">
                 <ul class="footer-sub-list">
                   <li class="footer-sub-item">
-                    <span class="footer-sub-link sub-title">Information</span>
+                    <span class="sub-title">Information</span>
                   </li>
                   <li class="footer-sub-item">
                     <a href="" class="footer-sub-link sub-link"> Gift Cards</a>
@@ -538,13 +569,15 @@
               <li class="col-4 col-sm-12 footer-item">
                 <ul class="footer-sub-list">
                   <li class="footer-sub-item">
-                    <span class="footer-sub-link sub-title">Contact</span>
+                    <span class="sub-title">Contact</span>
                   </li>
                   <li class="footer-sub-item">
-                    <span class="footer-sub-link">store@uikit.com </span>
+                    <a href="" class="footer-sub-link">store@uikit.com </a>
                   </li>
                   <li class="footer-sub-item">
-                    <span class="footer-sub-link">Hotline: +1 131 138 138</span>
+                    <a href="" class="footer-sub-link"
+                      >Hotline: +1 131 138 138</a
+                    >
                   </li>
                 </ul>
               </li>
