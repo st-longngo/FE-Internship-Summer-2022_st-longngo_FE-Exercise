@@ -19,7 +19,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .row {
     margin: 0 -4px;
     & > [class*='col-'] {

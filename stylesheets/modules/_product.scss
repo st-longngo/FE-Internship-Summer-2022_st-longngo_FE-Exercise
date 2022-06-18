@@ -33,7 +33,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .product {
     margin-bottom: 12px;
     &-image {

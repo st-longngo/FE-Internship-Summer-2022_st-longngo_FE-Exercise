@@ -51,7 +51,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .footer {
     &-top {
       padding: 24px 0;

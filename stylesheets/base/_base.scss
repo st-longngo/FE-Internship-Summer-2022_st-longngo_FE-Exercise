@@ -42,7 +42,7 @@ section h3 {
   margin-bottom: 40px;
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   section {
     margin-bottom: 24px;
   }
