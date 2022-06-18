@@ -72,7 +72,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .banner {
     &-inner {
       padding-left: 24px;

@@ -131,7 +131,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .home-page {
     .section {
       &-header {

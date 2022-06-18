@@ -341,6 +341,7 @@ h3 {
   width: 100%;
   padding: 30px 0;
   background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s linear;
 }
 .sticky .logo img {

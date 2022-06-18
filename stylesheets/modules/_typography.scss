@@ -32,7 +32,7 @@ h3 {
   color: map-get($color, text);
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .txt-title {
     font-size: map-get($font-size, 'md-2-5');
   }

@@ -19,7 +19,7 @@
   }
 }
 
-@include maxWidth(768px) {
+@include maxWidth($mobile) {
   .btn {
     padding: 4px 10px;
     font-size: map-get($font-size, '2xs');
