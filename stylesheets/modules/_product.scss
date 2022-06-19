@@ -1,5 +1,13 @@
 .product {
-  position: relative;
+  &-thumnail {
+    position: relative;
+    &:hover {
+      .product-cart {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
   &-link {
     display: block;
   }
@@ -8,14 +16,23 @@
     display: block;
     object-fit: cover;
   }
+  &-cart {
+    @include position(absolute, 0, 0, 0, 0);
+    @include flex($content: center, $items: flex-end);
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s linear;
+  }
   &-content {
     padding: 16px 0;
   }
   &-price {
     @include flex($content: space-between, $items: center);
     span {
-      font-size: map-get($font-size, 'md-3');
-      font-weight: map-get($font-weight, 'regular');
+      font-size: map-get($font-size, "md-3");
+      font-weight: map-get($font-weight, "regular");
     }
   }
   &-sale {
@@ -24,7 +41,7 @@
         color: map-get($color, secondary);
       }
       .product-discount {
-        color: map-get($color, 'gray-2');
+        color: map-get($color, "gray-2");
       }
     }
   }
@@ -44,7 +61,7 @@
     }
     &-price {
       span {
-        font-size: map-get($font-size, '2xs');
+        font-size: map-get($font-size, "2xs");
       }
     }
     &-badge {
