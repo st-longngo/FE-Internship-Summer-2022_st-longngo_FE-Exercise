@@ -31,8 +31,8 @@
   &-price {
     @include flex($content: space-between, $items: center);
     span {
-      font-size: map-get($font-size, "md-3");
-      font-weight: map-get($font-weight, "regular");
+      font-size: map-get($font-size, 'md-3');
+      font-weight: map-get($font-weight, 'regular');
     }
   }
   &-sale {
@@ -41,7 +41,7 @@
         color: map-get($color, secondary);
       }
       .product-discount {
-        color: map-get($color, "gray-2");
+        color: map-get($color, 'gray-2');
       }
     }
   }
@@ -61,7 +61,7 @@
     }
     &-price {
       span {
-        font-size: map-get($font-size, "2xs");
+        font-size: map-get($font-size, '2xs');
       }
     }
     &-badge {

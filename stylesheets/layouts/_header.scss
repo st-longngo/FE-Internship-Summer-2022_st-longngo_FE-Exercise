@@ -17,6 +17,11 @@
         hue-rotate(245deg) brightness(121%) contrast(97%);
     }
   }
+  &-cart {
+    position: relative;
+    padding: 30px 0;
+    background-color: map-get($color, 'text');
+  }
 }
 .sticky {
   position: fixed;
