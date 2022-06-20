@@ -1,7 +1,7 @@
-const products = JSON.parse(localStorage.getItem("products"));
-let cart = JSON.parse(localStorage.getItem('cart'));
+const products = JSON.parse(localStorage.getItem("products")) || [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 const storePage = document.getElementById('store-page');
-const cartNumber = document.getElementById("cart-number");
+const cartNumber = document.getElementById('cart-number');
 
 function renderCartNumber() {
   const quantityProduct = cart.reduce((acc, item) => acc + item.quantity, 0);
@@ -44,14 +44,15 @@ function renderCart() {
                       ${item.name}
                     </h4>
                     <span class="txt-regular cart-price">$${(item.price - (item.price * item.discount / 100)).toFixed(2)}</span>
+                    ${item.discount ? `<span class="txt-regular cart-discount">$${item.price}</span>`: ``}
                   </div>
                 </div>
                 <div class="cart-buttons">
-                  <button class="cart-btn" onclick={minusCart(${item.id})}>
+                  <button class="cart-btn" id="minus" onclick={minusCart(${item.id})}>
                     <i class="bx bx-minus"></i>
                   </button>
                   <div class="cart-quantity">${item.quantity}</div>
-                  <button class="cart-btn" onclick={addCart(${item.id})}>
+                  <button class="cart-btn" id="add" onclick={addCart(${item.id})}>
                     <i class="bx bx-plus"></i>
                   </button>
                 </div>
@@ -80,7 +81,7 @@ function renderCart() {
             <div class="order-total">
               <p class="txt-bold">TOTAL PRICE</p>
               <span class="total" id="total">
-                ${cart.reduce((acc, item) => acc + ((item.price - (item.price * item.discount / 100)) * item.quantity), 0).toFixed(2)}
+                $${cart.reduce((acc, item) => acc + ((item.price - (item.price * item.discount / 100)) * item.quantity), 0).toFixed(2)}
               </span>
             </div>
             <a href="#" class="btn btn-secondary order-btn">check out</a>
@@ -100,7 +101,8 @@ function renderCart() {
           <a href="index.html" class="btn btn-secondary">Back home</a>
         </div>
       </div>
-    </section>`;
+    </section>
+    `;
   }
 }
 
@@ -112,14 +114,8 @@ function updateCart() {
 
 updateCart();
 function addCart(id) {
-  const product = products.find((x) => x.id === id);
   const productCart = cart.find((x) => x.id === id);
-  if(!productCart) {
-    const newProduct = {...product, quantity: 1};
-    cart.push(newProduct);
-  } else {
-    cart[cart.indexOf(productCart)].quantity += 1;
-  }
+  cart[cart.indexOf(productCart)].quantity += 1;
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCart();
 }
@@ -130,6 +126,22 @@ function minusCart(id) {
     cart[cart.indexOf(productCart)].quantity -= 1;
   } else {
     cart = cart.filter((item) => item.id !== id);
+  }
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCart();
+}
+
+function changeQuantityOfCart(action, id) {
+  const productCart = cart.find((x) => x.id === id);
+  if(action === 'add') {
+    cart[cart.indexOf(productCart)].quantity += 1;
+  } 
+  if(action === 'minus') {
+    if(productCart.quantity - 1 > 0) {
+      cart[cart.indexOf(productCart)].quantity -= 1;
+    } else {
+      cart = cart.filter((item) => item.id !== id);
+    }
   }
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCart();

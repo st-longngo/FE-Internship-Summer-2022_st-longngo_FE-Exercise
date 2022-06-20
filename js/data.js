@@ -1,4 +1,4 @@
-const PRODUCTS = [
+var PRODUCTS = [
   {
     id: 1,
     name: "T-Shirt Summer Vibes",
@@ -29,7 +29,16 @@ const PRODUCTS = [
   },
 ];
 
-const CART = [];
+var KEYS = {
+  products: "products",
+  cart: "cart",
+};
 
-localStorage.setItem('products', JSON.stringify(PRODUCTS));
-localStorage.setItem('cart', JSON.stringify(CART));
+var CART = [];
+
+setData('keys', KEYS);
+
+var KEYS = getData('keys', {});
+
+setData(KEYS.products, PRODUCTS);
+setData(KEYS.cart, CART);

@@ -1,22 +1,15 @@
-const productLists = document.querySelectorAll(".product-list");
-const products = JSON.parse(localStorage.getItem("products"));
-const cart = JSON.parse(localStorage.getItem("cart"));
-const cartNumber = document.getElementById("cart-number");
+var keyList = getData('keys', {});
+var products = getData(keyList.products, []);
+var cart = getData(keyList.cart, []);
+var productLists = document.querySelectorAll('.product-list');
 
-function renderCartNumber() {
-  const quantityProduct = cart.reduce((acc, item) => acc + item.quantity, 0);
-  if (quantityProduct !== 0) {
-    cartNumber.classList.add("cart-active");
-    cartNumber.innerHTML = quantityProduct;
-  } else {
-    cartNumber.classList.remove("cart-active");
-    cartNumber.innerHTML = "";
-  }
-}
+window.addEventListener('DOMContentLoaded', function(e) {
+  renderCartNumber();
+  renderProduct();
+});
 
 function renderProduct() {
-  const listProduct = products
-    .map((item) => {
+  var listProduct = products.map(function(item) {
       return `
         <li class="col-3 col-sm-6">
             <div class="product ${item.discount ? `product-sale` : ``}">
@@ -30,7 +23,7 @@ function renderProduct() {
                     />
                 </a>
                 <div class="product-cart">
-                    <button class="btn btn-secondary btn-cart" onclick={addCart(${item.id})}>add to cart</button>
+                    <button class="btn btn-secondary btn-cart" data-id=${item.id}>add to cart</button>
                 </div>
                 </div>
                 <div class="product-content">
@@ -50,22 +43,26 @@ function renderProduct() {
         </li>`;
     })
     .join("");
-  productLists.forEach((productList) => (productList.innerHTML = listProduct));
+  productLists.forEach(function(productList) {productList.innerHTML = listProduct});
 }
 
-renderCartNumber();
-renderProduct();
+var cartBtns = document.querySelectorAll('.btn-cart');
+console.log(cartBtns)
+
+cartBtns.map(function(item) {
+  
+})
 
 function addCart(id) {
-  const product = products.find((x) => x.id === id);
-  const productCart = cart.find((x) => x.id === id);
+  cart = getData(keyList.cart);
+  var product = products.find(function(item) {return item.id === id; });
+  var productCart = cart.find(function(item) {return item.id === id; });
   if (!productCart) {
-    const newProduct = { ...product, quantity: 1 };
+    var newProduct = { ...product, quantity: 1 };
     cart.push(newProduct);
   } else {
-    // console.log(cart.indexOf(searchProduct));
     cart[cart.indexOf(productCart)].quantity += 1;
   }
-  localStorage.setItem("cart", JSON.stringify(cart.sort((a, b) => a.id - b.id)));
+  setData(keyList.cart, cart.sort(function(a, b){ return a.id - b.id; }))
   renderCartNumber();
 }

@@ -25,6 +25,10 @@
   &-price {
     font-size: map-get($font-size, 'md-2');
   }
+  &-discount {
+    color: map-get($color, 'gray-4');
+    text-decoration: line-through;
+  }
   &-buttons {
     display: flex;
     gap: 0 6px;
