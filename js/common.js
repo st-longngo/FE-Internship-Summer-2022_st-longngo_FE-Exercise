@@ -29,7 +29,8 @@ function renderCartNumberOfListProduct() {
 }
 
 function formatFixed(value) {
-  return value.toFixed(2);
+  var number = 2;
+  return value.toFixed(number);
 }
 
 

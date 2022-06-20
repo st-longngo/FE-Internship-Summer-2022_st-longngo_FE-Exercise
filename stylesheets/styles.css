@@ -371,6 +371,11 @@ h3 {
   width: 18%;
   justify-content: center;
 }
+.cart-quantity {
+  width: 30px;
+  text-align: center;
+  border: 1px solid #a8a8a8;
+}
 .cart-btn {
   display: flex;
   justify-content: center;

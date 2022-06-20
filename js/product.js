@@ -4,7 +4,7 @@ var productLists = document.querySelectorAll('.product-list');
 window.addEventListener('DOMContentLoaded', function(e) {
   renderCartNumberOfListProduct();
   renderProduct();
-  addEventToCart();
+  addEventToProduct();
 });
 
 function renderProduct() {
@@ -47,11 +47,11 @@ function renderProduct() {
   });
 }
 
-function addEventToCart() {
+function addEventToProduct() {
   var cartBtns = document.querySelectorAll('.btn-cart');
   cartBtns.forEach(function(item) {
     item.addEventListener('click', function() {
-      addCart(item.getAttribute('data-id'));
+      addCart(item.dataset.id);
     });
   })
 }

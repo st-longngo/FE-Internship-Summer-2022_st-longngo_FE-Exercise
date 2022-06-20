@@ -38,12 +38,12 @@ function renderListCart() {
                     ${item.discount ? `<span class="txt-regular cart-discount">$${item.price}</span>`: ``}
                   </div>
                 </div>
-                <div class="cart-buttons">
-                  <button class="cart-btn" data-id=${item.id} id="minus">
+                <div class="cart-buttons" data-id=${item.id}>
+                  <button class="cart-btn" id="minus">
                     <i class="bx bx-minus"></i>
                   </button>
-                  <div class="cart-quantity">${item.quantity}</div>
-                  <button class="cart-btn" data-id=${item.id} id="add">
+                  <input type="text" class="cart-quantity" value=${item.quantity}>
+                  <button class="cart-btn" id="add">
                     <i class="bx bx-plus"></i>
                   </button>
                 </div>
@@ -55,7 +55,7 @@ function renderListCart() {
                 </button>
               </li>
               `
-            }).join(' ')}
+            })}
             </ul>
           </div>
           <div class="col-4 col-sm-12">
@@ -72,9 +72,9 @@ function renderListCart() {
             <div class="order-total">
               <p class="txt-bold">TOTAL PRICE</p>
               <span class="total" id="total">
-                $${cart.reduce(function(acc, item){
-                  return acc + ((item.price - (item.price * item.discount / 100)) * item.quantity)
-                },0).toFixed(2)}
+                $${formatFixed(cart.reduce(function(acc, item){
+                    return acc + ((item.price - (item.price * item.discount / 100)) * item.quantity)
+                  },0))}
               </span>
             </div>
             <a href="#" class="btn btn-secondary order-btn">check out</a>
@@ -109,15 +109,18 @@ function addEventChangeOfCart() {
   var addBtns = document.querySelectorAll('#add');
   var minusBtns = document.querySelectorAll('#minus');
   var closeBtns = document.querySelectorAll('#cart-close');
-  
+  var listInputQuantity = document.querySelectorAll('.cart-quantity');
+
   addBtns.forEach(function(item) {
     item.addEventListener('click', function(e) {
-      changeQuantityOfCart('add', item.getAttribute('data-id'));
+      var idCart = item.parentElement.dataset.id;
+      changeQuantityOfCart('add', idCart);
     })
   })
   minusBtns.forEach(function(item) {
     item.addEventListener('click', function(e) {
-      changeQuantityOfCart('minus', item.getAttribute('data-id'));
+      var idCart = item.parentElement.dataset.id;
+      changeQuantityOfCart('minus', idCart);
     })
   })
   closeBtns.forEach(function(item) {
@@ -125,25 +128,46 @@ function addEventChangeOfCart() {
       deleteCartOfProductList(item.getAttribute('data-id'));
     })
   })
+  listInputQuantity.forEach(function(item) {
+    item.onkeypress = function(e) {
+      return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
+    }
+    item.addEventListener('change', function(e) {
+      var idCart = item.parentElement.dataset.id;
+      changeQuantityOfCart('change', idCart, Number(e.target.value));
+    })
+  })
 }
 
-function changeQuantityOfCart(action, id) {
+function changeQuantityOfCart(action, id, value = undefined) {
   cart = getData(keyList.cart, []);
   var productCart = cart.find(function(item) {
     return item.id === id;
   });
   var cartIndex = cart.indexOf(productCart);
-  if(action === 'add') {
-    cart[cartIndex].quantity += 1;
-  } 
-  if(action === 'minus') {
-    if(productCart.quantity - 1 > 0) {
-      cart[cartIndex].quantity -= 1;
-    } else {
-      cart = cart.filter(function(item){
-        return item.id !== id
-      });
-    }
+  switch (action) {
+    case 'add':
+      cart[cartIndex].quantity += 1;
+      break;
+    case 'minus':
+      if(productCart.quantity - 1 > 0) {
+        cart[cartIndex].quantity -= 1;
+      } else {
+        cart = cart.filter(function(item){
+          return item.id !== id;
+        });
+      }
+      break;
+    case 'change':
+      if(value) cart[cartIndex].quantity = value;
+      else {
+        cart = cart.filter(function(item){
+          return item.id !== id;
+        });
+      }
+      break;
+    default:
+      break;
   }
   setData(keyList.cart, cart);
   updateListCart();

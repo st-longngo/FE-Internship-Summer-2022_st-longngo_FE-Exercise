@@ -35,6 +35,11 @@
     width: 18%;
     justify-content: center;
   }
+  &-quantity {
+    width: 30px;
+    text-align: center;
+    border: 1px solid map-get($color, 'gray-4');
+  }
   &-btn {
     @include flex($content: center, $items: center);
     font-size: map-get($font-size, 'md-2');
