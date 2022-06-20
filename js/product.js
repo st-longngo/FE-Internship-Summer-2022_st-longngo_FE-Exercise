@@ -1,11 +1,10 @@
-var keyList = getData('keys', {});
 var products = getData(keyList.products, []);
-var cart = getData(keyList.cart, []);
 var productLists = document.querySelectorAll('.product-list');
 
 window.addEventListener('DOMContentLoaded', function(e) {
-  renderCartNumber();
+  renderCartNumberOfListProduct();
   renderProduct();
+  addEventToCart();
 });
 
 function renderProduct() {
@@ -13,7 +12,7 @@ function renderProduct() {
       return `
         <li class="col-3 col-sm-6">
             <div class="product ${item.discount ? `product-sale` : ``}">
-                <div class="product-thumnail">
+              <div class="product-thumnail">
                 ${item.discount ? `<span class="badge badge-primary product-badge">-${item.discount}%</span>` : ""} 
                 <a href="#" class="product-link">
                     <img
@@ -25,8 +24,8 @@ function renderProduct() {
                 <div class="product-cart">
                     <button class="btn btn-secondary btn-cart" data-id=${item.id}>add to cart</button>
                 </div>
-                </div>
-                <div class="product-content">
+              </div>
+              <div class="product-content">
                 <h4 class="product-name">
                     <a href="#" class="typo-2 txt-light">
                         ${item.name}
@@ -34,35 +33,47 @@ function renderProduct() {
                 </h4>
                 <div class="product-price">
                     ${
-                      item.discount ? `<span>$${(item.price - (item.price * item.discount) / 100).toFixed(2)}</span>
+                      item.discount ? `<span>$${formatFixed((item.price - (item.price * item.discount) / 100))}</span>
                       <span class="product-discount">$${item.price}</span>` : `<span>$${item.price}</span>`
                     }
                 </div>
-                </div>
+              </div>
             </div>
         </li>`;
     })
     .join("");
-  productLists.forEach(function(productList) {productList.innerHTML = listProduct});
+  productLists.forEach(function(productList) {
+    productList.innerHTML = listProduct;
+  });
 }
 
-var cartBtns = document.querySelectorAll('.btn-cart');
-console.log(cartBtns)
-
-cartBtns.map(function(item) {
-  
-})
+function addEventToCart() {
+  var cartBtns = document.querySelectorAll('.btn-cart');
+  cartBtns.forEach(function(item) {
+    item.addEventListener('click', function() {
+      addCart(item.getAttribute('data-id'));
+    });
+  })
+}
 
 function addCart(id) {
   cart = getData(keyList.cart);
-  var product = products.find(function(item) {return item.id === id; });
-  var productCart = cart.find(function(item) {return item.id === id; });
+
+  var product = products.find(function(item){
+    return item.id === id;
+  });
+  var productCart = cart.find(function(item){
+    return item.id === id;
+  });
   if (!productCart) {
-    var newProduct = { ...product, quantity: 1 };
-    cart.push(newProduct);
+    var newProductCart = { ...product, quantity: 1 };
+    cart.push(newProductCart);
   } else {
     cart[cart.indexOf(productCart)].quantity += 1;
   }
-  setData(keyList.cart, cart.sort(function(a, b){ return a.id - b.id; }))
-  renderCartNumber();
+
+  setData(keyList.cart, cart.sort(function(a, b){ 
+    return a.id - b.id; 
+  }))
+  renderCartNumberOfListProduct();
 }

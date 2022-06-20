@@ -1039,7 +1039,7 @@ h3 {
 }
 
 @media only screen and (max-width: 768px) {
-  .store-page .section-cart {
+  .store-page section {
     padding-top: 100px;
   }
   .store-page .order-name {

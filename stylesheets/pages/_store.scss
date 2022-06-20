@@ -46,10 +46,8 @@
 
 @include maxWidth($mobile) {
   .store-page {
-    .section {
-      &-cart {
-        padding-top: 100px;
-      }
+    section {
+      padding-top: 100px;
     }
     .order {
       &-name {

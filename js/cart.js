@@ -1,20 +1,11 @@
-const products = JSON.parse(localStorage.getItem("products")) || [];
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-const storePage = document.getElementById('store-page');
-const cartNumber = document.getElementById('cart-number');
+var products = getData(keyList.products, []);
+var storePage = document.getElementById('store-page');
 
-function renderCartNumber() {
-  const quantityProduct = cart.reduce((acc, item) => acc + item.quantity, 0);
-  if (quantityProduct !== 0) {
-    cartNumber.classList.add("cart-active");
-    cartNumber.innerHTML = quantityProduct;
-  } else {
-    cartNumber.classList.remove("cart-active");
-    cartNumber.innerHTML = "";
-  }
-}
+window.addEventListener('DOMContentLoaded', function(e) {
+  updateListCart();
+});
 
-function renderCart() {
+function renderListCart() {
   if(cart.length > 0) {
     storePage.innerHTML = `
     <section class="section section-store">
@@ -23,12 +14,12 @@ function renderCart() {
           <div class="col-8 col-sm-12">
             <h3 class="txt-bold txt-center cart-title">Shopping Cart</h3>
             <ul class="cart-list" id="cart-list">
-              <div class="cart-row">
+              <li class="cart-row">
                 <span class="txt-bold cart-body">PRODUCT</span>
                 <span class="txt-bold cart-buttons">QUANTITY</span>
                 <span class="txt-center txt-bold cart-total">TOTAL</span>
                 <span class="cart-close"></span>
-              </div>
+              </li>
             ${cart.map((item) => {
               return `                
               <li class="cart">
@@ -43,23 +34,23 @@ function renderCart() {
                     <h4 class="typo-2 txt-light cart-name">
                       ${item.name}
                     </h4>
-                    <span class="txt-regular cart-price">$${(item.price - (item.price * item.discount / 100)).toFixed(2)}</span>
+                    <span class="txt-regular cart-price">$${formatFixed(item.price - (item.price * item.discount / 100))}</span>
                     ${item.discount ? `<span class="txt-regular cart-discount">$${item.price}</span>`: ``}
                   </div>
                 </div>
                 <div class="cart-buttons">
-                  <button class="cart-btn" id="minus" onclick={minusCart(${item.id})}>
+                  <button class="cart-btn" data-id=${item.id} id="minus">
                     <i class="bx bx-minus"></i>
                   </button>
                   <div class="cart-quantity">${item.quantity}</div>
-                  <button class="cart-btn" id="add" onclick={addCart(${item.id})}>
+                  <button class="cart-btn" data-id=${item.id} id="add">
                     <i class="bx bx-plus"></i>
                   </button>
                 </div>
                 <p class="txt-center cart-total">
-                $${((item.price - (item.price * item.discount / 100)) * item.quantity).toFixed(2)}
+                $${formatFixed((item.price - (item.price * item.discount / 100)) * item.quantity)}
                 </p>
-                <button id="cart-close" class="cart-btn cart-close" onclick={deleteCart(${item.id})}>
+                <button id="cart-close" class="cart-btn cart-close" data-id=${item.id}>
                   <i class="bx bx-x"></i>
                 </button>
               </li>
@@ -81,7 +72,9 @@ function renderCart() {
             <div class="order-total">
               <p class="txt-bold">TOTAL PRICE</p>
               <span class="total" id="total">
-                $${cart.reduce((acc, item) => acc + ((item.price - (item.price * item.discount / 100)) * item.quantity), 0).toFixed(2)}
+                $${cart.reduce(function(acc, item){
+                  return acc + ((item.price - (item.price * item.discount / 100)) * item.quantity)
+                },0).toFixed(2)}
               </span>
             </div>
             <a href="#" class="btn btn-secondary order-btn">check out</a>
@@ -106,50 +99,62 @@ function renderCart() {
   }
 }
 
-function updateCart() {
-  cart = JSON.parse(localStorage.getItem('cart'));
-  renderCartNumber();
-  renderCart();
+function updateListCart() {
+  renderCartNumberOfListProduct();
+  renderListCart();
+  addEventChangeOfCart();
 }
 
-updateCart();
-function addCart(id) {
-  const productCart = cart.find((x) => x.id === id);
-  cart[cart.indexOf(productCart)].quantity += 1;
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCart();
-}
-
-function minusCart(id) {
-  const productCart = cart.find((x) => x.id === id);
-  if(productCart.quantity - 1 > 0) {
-    cart[cart.indexOf(productCart)].quantity -= 1;
-  } else {
-    cart = cart.filter((item) => item.id !== id);
-  }
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCart();
+function addEventChangeOfCart() {
+  var addBtns = document.querySelectorAll('#add');
+  var minusBtns = document.querySelectorAll('#minus');
+  var closeBtns = document.querySelectorAll('#cart-close');
+  
+  addBtns.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      changeQuantityOfCart('add', item.getAttribute('data-id'));
+    })
+  })
+  minusBtns.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      changeQuantityOfCart('minus', item.getAttribute('data-id'));
+    })
+  })
+  closeBtns.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      deleteCartOfProductList(item.getAttribute('data-id'));
+    })
+  })
 }
 
 function changeQuantityOfCart(action, id) {
-  const productCart = cart.find((x) => x.id === id);
+  cart = getData(keyList.cart, []);
+  var productCart = cart.find(function(item) {
+    return item.id === id;
+  });
+  var cartIndex = cart.indexOf(productCart);
   if(action === 'add') {
-    cart[cart.indexOf(productCart)].quantity += 1;
+    cart[cartIndex].quantity += 1;
   } 
   if(action === 'minus') {
     if(productCart.quantity - 1 > 0) {
-      cart[cart.indexOf(productCart)].quantity -= 1;
+      cart[cartIndex].quantity -= 1;
     } else {
-      cart = cart.filter((item) => item.id !== id);
+      cart = cart.filter(function(item){
+        return item.id !== id
+      });
     }
   }
-  localStorage.setItem('cart', JSON.stringify(cart));
-  updateCart();
+  setData(keyList.cart, cart);
+  updateListCart();
 }
 
-function deleteCart(id) {
-  const newCart = cart.filter((item) => item.id !== id);
-  localStorage.setItem('cart', JSON.stringify(newCart));
-  updateCart();
+function deleteCartOfProductList(id) {
+  cart = getData(keyList.cart, []);
+  var newCart = cart.filter(function(item) {
+    return item.id !== id}
+  );
+  setData(keyList.cart, newCart);
+  updateListCart();
 }
 
