@@ -1,0 +1,63 @@
+.store-page {
+  section {
+    padding-top: 48px;
+  }
+  .store {
+    &-inner {
+      align-items: center;
+    }
+  }
+  .order {
+    &-list {
+      padding: 40px 10px;
+      margin-bottom: 16px;
+      border-top: 1px solid map-get($color, 'gray-4');
+      border-bottom: 1px solid map-get($color, 'gray-4');
+    }
+    &-item {
+      @include flex($content: space-between, $items: center);
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &-name {
+      font-size: map-get($font-size, 'md-2');
+    }
+    &-total {
+      @include flex($content: space-between, $items: center);
+      margin-bottom: 20px;
+    }
+    &-btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .error {
+    @include flex($direction: column, $items: center);
+    &-image {
+      @include size(400px, 400px);
+      img {
+        @include size(100%, 100%);
+      }
+    }
+  }
+}
+
+@include maxWidth($mobile) {
+  .store-page {
+    section {
+      padding-top: 100px;
+    }
+    .order {
+      &-name {
+        text-align: left;
+      }
+    }
+    .error {
+      &-image {
+        @include size(300px, 300px);
+      }
+    }
+  }
+}

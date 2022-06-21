@@ -5,3 +5,19 @@
 .txt-light {
   font-weight: map-get($font-weight, 'light');
 }
+
+.txt-regular {
+  font-weight: map-get($font-weight, 'regular');
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.txt-left {
+  text-align: left;
+}
+
+.txt-right {
+  text-align: tight;
+}

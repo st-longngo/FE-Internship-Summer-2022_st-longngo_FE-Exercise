@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./stylesheets/styles.css" />
+  </head>
+  <body>
+    <header class="header header-cart" id="header">
+      <div class="container">
+        <div class="header-inner">
+          <h1 class="logo">
+            <a href="index.html">
+              <img src="./images/Logo.svg" alt="Eshop" />
+            </a>
+          </h1>
+          <nav class="nav">
+            <ul class="nav-menu">
+              <li class="nav-item"><a href="#" class="nav-link">Men</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Women</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+            </ul>
+          </nav>
+          <ul class="header-extra">
+            <li class="extra-item" id="search">
+              <a href="#" id="search" class="extra-link">
+                <img
+                  src="./images/search.svg"
+                  alt="search"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="./store.html" id="cart" class="extra-link">
+                <img src="./images/cart.svg" alt="cart" class="extra-icon" />
+                <span id="cart-number">1</span>
+              </a>
+            </li>
+            <li class="extra-item">
+              <a href="#" id="person" class="extra-link">
+                <img
+                  src="./images/avatar.svg"
+                  alt="avatar"
+                  class="extra-icon"
+                />
+              </a>
+            </li>
+            <li class="extra-item">
+              <button class="extra-control">
+                <img
+                  src="./images/hamburger.svg"
+                  alt="hamburger"
+                  id="hamburger"
+                />
+                <img src="./images/close.svg" alt="close" id="close" />
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="store-page" id="store-page">
+      <section class="section section-store">
+        <div class="container">
+          <div class="row store-inner">
+            <div class="col-8 col-sm-12">
+              <h3 class="txt-bold txt-center cart-title">Shopping Cart</h3>
+              <ul class="cart-list" id="cart-list">
+              </ul>
+            </div>
+            <div class="col-4 col-sm-12">
+              <h3 class="txt-bold txt-center cart-title">Sub Total</h3>
+              <ul class="order-list" id="order-list"></ul>
+              <div class="order-total">
+                <p class="txt-bold">TOTAL PRICE</p>
+                <span class="total" id="total"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="row footer-list">
+            <div class="col-5 col-sm-12 footer-iso">
+              <a href="#" class="footer-logo">
+                <img src="./images/Logo.svg" alt="E-Shop" />
+              </a>
+              <p class="footer-desc">
+                House My Brand designs clothing for the young, the old &everyone
+                in between – but most importantly, for the fashionable
+              </p>
+              <ul class="footer-social">
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
+                    <i class="bx bxl-facebook"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
+                    <i class="bx bxl-twitter"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
+                    <i class="bx bxl-linkedin"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
+                    <i class="bx bxl-instagram"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a href="" class="footer-social-link">
+                    <i class="bx bxl-youtube"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul class="col-7 col-sm-12 footer-menu">
+              <li class="col-4 col-sm-12 footer-item">
+                <ul class="footer-sub-list">
+                  <li class="footer-sub-item">
+                    <span class="sub-title">Shopping online</span>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">Order Status</a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">
+                      Shipping and Delivery
+                    </a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">Returns</a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">
+                      Payment Options
+                    </a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">Contact Us</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="col-4 col-sm-12 footer-item">
+                <ul class="footer-sub-list">
+                  <li class="footer-sub-item">
+                    <span class="sub-title">Information</span>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link"> Gift Cards</a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">Find a store</a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">Newsletter</a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link">
+                      Bacome a member
+                    </a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link sub-link"
+                      >Site feedback</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="col-4 col-sm-12 footer-item">
+                <ul class="footer-sub-list">
+                  <li class="footer-sub-item">
+                    <span class="sub-title">Contact</span>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link">store@uikit.com </a>
+                  </li>
+                  <li class="footer-sub-item">
+                    <a href="" class="footer-sub-link"
+                      >Hotline: +1 131 138 138</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          DESIGN BY ICEO.CO - © 2019. ALL RIGHTS RESERVED.
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script src="js/script.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/cart.js"></script>
+</html>
