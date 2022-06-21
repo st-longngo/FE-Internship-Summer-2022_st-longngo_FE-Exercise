@@ -1,4 +1,4 @@
-var PRODUCTS = [
+const PRODUCTS = [
   {
     id: '1',
     name: "T-Shirt Summer Vibes",
@@ -29,16 +29,16 @@ var PRODUCTS = [
   },
 ];
 
-var KEYS = {
+const KEYS = {
   products: "products",
   cart: "cart",
 };
 
-var CART = [];
+const CART = [];
 
 setData('keys', KEYS);
 
-var KEYS = getData('keys', {});
+// const KEYS = getData('keys', {});
 
 setData(KEYS.products, PRODUCTS);
 setData(KEYS.cart, CART);
