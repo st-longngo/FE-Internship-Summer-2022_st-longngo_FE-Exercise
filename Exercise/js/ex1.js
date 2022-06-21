@@ -16,7 +16,7 @@ class Stack {
     return !this.isEmpty() ? this.data[this.data.length - 1] : undefined;
   }
   isEmpty() {
-    return this.data.length === 0;
+    return !this.data.length;
   }
   size() {
     return this.data.length;
@@ -42,7 +42,7 @@ class Queue {
     return !this.isEmpty() ? this.data[0] : undefined;
   }
   isEmpty() {
-    return this.data.length === 0;
+    return !this.data.length;
   }
   size() {
     return this.data.length;

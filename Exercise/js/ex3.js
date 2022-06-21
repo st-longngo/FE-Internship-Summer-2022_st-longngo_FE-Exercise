@@ -4,6 +4,5 @@
 // Ex: ("The quick brown fox jumps over the lazy dog", 'the') => 2
 // Ex: ("The quick brown fox jumps over the lazy dog", 'fox') => 1
 function countString(str, subStr) {
-  let regEx = new RegExp(subStr, 'gi');
-  return str.match(regEx).length;
+  return str.match(new RegExp(subStr, 'gi')).length;
 }
