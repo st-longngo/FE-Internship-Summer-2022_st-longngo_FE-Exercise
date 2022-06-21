@@ -1,5 +1,4 @@
 var products = getData(keyList.products, []);
-var storePage = document.getElementById('store-page');
 var cartLists = document.getElementById('cart-list');
 var orderLists = document.getElementById('order-list');
 var total = document.getElementById('total');
@@ -49,18 +48,14 @@ function renderListCart() {
       return acc + ((item.price - (item.price * item.discount / 100)) * item.quantity)
     },0));
   } else {
-    storePage.innerHTML = `
-    <section class='section section-error'>
-      <div class='container'>
-        <div class='error'>
-          <div class='error-image'>
-            <img src='./images/error-image.png' alt='Error 404' />
-          </div>
-          <a href='index.html' class='btn btn-secondary'>Back home</a>
-        </div>
-      </div>
-    </section>
-    `;
+    cartLists.innerHTML = "<div class='error'>" +
+        "<div class='error-image'>" +
+          "<img src='./images/error-image.png' alt='Error 404' />" +
+        "</div>" +
+        "<a href='index.html' class='btn btn-secondary'>Back home</a>" +
+      "</div>";
+    orderLists.innerHTML = "<li><p>Không có sản phẩm trong giỏ hàng</p></li>";
+    total.innerHTML = "$0";
   }
 }
 

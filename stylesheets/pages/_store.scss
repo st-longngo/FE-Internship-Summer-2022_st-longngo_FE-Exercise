@@ -36,7 +36,7 @@
   .error {
     @include flex($direction: column, $items: center);
     &-image {
-      @include size(700px, 700px);
+      @include size(400px, 400px);
       img {
         @include size(100%, 100%);
       }
