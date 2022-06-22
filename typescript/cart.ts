@@ -52,7 +52,7 @@ const renderListCart = (): void => {
       return `<li class='order-item'>
         <h4 class='txt-light order-name'>${item.name}</h4>
         <div class='txt-bold order-quantity'>x${item.quantity}</div>
-      </li>`
+      </li>`;
     }).join('');
     total.innerHTML = `$${formatFixed(cart.reduce((acc: number, item: ICart) => 
       acc + ((item.price - (item.price * item.discount / 100)) * item.quantity), 0))
@@ -103,12 +103,12 @@ const addEventChangeOfCart = (): void => {
   });
 
   listInputQuantity.forEach((item: HTMLElement) => {
-    item.addEventListener('keypress', (e: any) => {
+    item.addEventListener('keypress', (e: KeyboardEvent) => {
       return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
     });
-    item.addEventListener('change', (e: any) => {
+    item.addEventListener('change', (e: Event) => {
       const idCart: string = item.parentElement.dataset.id;
-      changeQuantityOfCart('change', idCart, Number(e.target.value));
+      changeQuantityOfCart('change', idCart, Number((e.target as HTMLInputElement).value));
     });
   });
 }

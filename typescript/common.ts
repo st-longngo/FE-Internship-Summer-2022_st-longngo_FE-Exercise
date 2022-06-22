@@ -2,12 +2,12 @@ import { ICart, IProduct, LS_KEYS } from "./interface.js";
 
 const cartNumber = document.querySelector('.js-cart-number') as HTMLElement;
 
-export const getData = <T>(key: string, value: any): T => {
+export const getData = <T>(key: string, value: T): T => {
   const data: T = JSON.parse(localStorage.getItem(key)!);
   return data ? data : value;
 }
 
-export const setData = (key: LS_KEYS, value: any): void => {
+export const setData = <T>(key: LS_KEYS, value: T): void => {
   localStorage.setItem(key, JSON.stringify(value));
 }
 

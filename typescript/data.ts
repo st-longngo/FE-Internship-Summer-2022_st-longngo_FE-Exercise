@@ -36,7 +36,7 @@ const CART: ICart[] = [];
 
 setData(LS_KEYS.PRODUCTS, PRODUCTS);
 if(!getData(LS_KEYS.CART, null)) {
-  setData(LS_KEYS.CART, CART);
+  setData<ICart[]>(LS_KEYS.CART, CART);
 }
 
   
