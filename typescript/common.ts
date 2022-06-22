@@ -1,23 +1,21 @@
-import { ICart, IProduct } from "./interface.js";
+import { ICart, IProduct, LS_KEYS } from "./interface.js";
 
 const cartNumber = document.querySelector('.js-cart-number') as HTMLElement;
 
-export const getData = (key : string, value : any) : any => {
-  const data : any = JSON.parse(localStorage.getItem(key)!);
+export const getData = <T>(key: string, value: any): T => {
+  const data: T = JSON.parse(localStorage.getItem(key)!);
   return data ? data : value;
 }
 
-export const setData = (key: string, value: any) : void => {
+export const setData = (key: LS_KEYS, value: any): void => {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-export const keyList = getData('keys', {});
-let cart : ICart[] = getData(keyList.cart, []);
-export const products : IProduct[] = getData(keyList.products, []);
+export const products: IProduct[] = getData(LS_KEYS.PRODUCTS, []);
 
-export const renderCartNumberOfListProduct = () : void => {
-  cart = getData(keyList.cart, []);
-  const quantityProduct : number = cart.reduce((acc : number, item : ICart) => acc + item.quantity, 0);
+export const renderCartNumberOfListProduct = (): void => {
+  const cart: ICart[] = getData(LS_KEYS.CART, []);
+  const quantityProduct: number = cart.reduce((acc: number, item: ICart) => acc + item.quantity, 0);
   if (quantityProduct) {
     cartNumber.classList.add('cart-active');
     cartNumber.innerHTML = quantityProduct + '';
@@ -27,7 +25,7 @@ export const renderCartNumberOfListProduct = () : void => {
   }
 }
 
-export const formatFixed = (value : number) => {
+export const formatFixed = (value: number) => {
   const number = 2;
   return value.toFixed(number);
 }

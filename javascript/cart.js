@@ -1,5 +1,5 @@
-import { getData, setData, keyList, formatFixed, renderCartNumberOfListProduct } from './common.js';
-let cart = getData(keyList.cart, []);
+import { getData, setData, formatFixed, renderCartNumberOfListProduct } from './common.js';
+import { LS_KEYS } from './interface.js';
 const cartLists = document.getElementById('js-cart-list');
 const orderLists = document.getElementById('js-order-list');
 const total = document.getElementById('js-total');
@@ -7,7 +7,7 @@ window.addEventListener('DOMContentLoaded', () => {
     updateListCart();
 });
 const renderListCart = () => {
-    cart = getData(keyList.cart, []);
+    const cart = getData(LS_KEYS.CART, []);
     cartLists.innerHTML = `
     <li class="cart-row">
       <span class="txt-bold cart-body">PRODUCT</span>
@@ -54,7 +54,8 @@ const renderListCart = () => {
         total.innerHTML = `$${formatFixed(cart.reduce((acc, item) => acc + ((item.price - (item.price * item.discount / 100)) * item.quantity), 0))}`;
     }
     else {
-        cartLists.innerHTML += `<div class='error'>
+        cartLists.innerHTML +=
+            `<div class='error'>
         <div class='error-image'>
           <img src='./images/error-image.png' alt='Error 404' />
         </div>
@@ -102,7 +103,7 @@ const addEventChangeOfCart = () => {
     });
 };
 const changeQuantityOfCart = (action, id, value = null) => {
-    cart = getData(keyList.cart, []);
+    let cart = getData(LS_KEYS.CART, []);
     const productCart = cart.find((item) => item.id === id);
     const cartIndex = cart.indexOf(productCart);
     switch (action) {
@@ -127,12 +128,12 @@ const changeQuantityOfCart = (action, id, value = null) => {
         default:
             break;
     }
-    setData(keyList.cart, cart);
+    setData(LS_KEYS.CART, cart);
     updateListCart();
 };
 const deleteCartOfProductList = (id) => {
-    cart = getData(keyList.cart, []);
+    const cart = getData(LS_KEYS.CART, []);
     const newCart = cart.filter((item) => item.id !== id);
-    setData(keyList.cart, newCart);
+    setData(LS_KEYS.CART, newCart);
     updateListCart();
 };

@@ -1,7 +1,7 @@
-import { getData, keyList, renderCartNumberOfListProduct, products, formatFixed, setData } from './common.js';
+import { getData, renderCartNumberOfListProduct, products, formatFixed, setData } from './common.js';
+import { LS_KEYS } from './interface.js';
 const productLists = document.querySelectorAll('.js-product-list');
-let cart = getData(keyList.cart, []);
-window.addEventListener('DOMContentLoaded', function (e) {
+window.addEventListener('DOMContentLoaded', (e) => {
     renderCartNumberOfListProduct();
     renderProduct();
     addEventToProduct();
@@ -45,7 +45,7 @@ const addEventToProduct = () => {
     });
 };
 const addCart = (id) => {
-    cart = getData(keyList.cart, []);
+    let cart = getData(LS_KEYS.CART, []);
     const product = products.find((item) => item.id === id);
     const productCart = cart.find((item) => item.id === id);
     if (!productCart) {
@@ -55,6 +55,6 @@ const addCart = (id) => {
     else {
         cart[cart.indexOf(productCart)].quantity += 1;
     }
-    setData(keyList.cart, cart);
+    setData(LS_KEYS.CART, cart);
     renderCartNumberOfListProduct();
 };

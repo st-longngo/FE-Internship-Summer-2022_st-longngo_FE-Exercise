@@ -1,4 +1,5 @@
 import { setData, getData } from './common.js';
+import { ICart, LS_KEYS } from './interface.js';
 
 const PRODUCTS = [
   {
@@ -30,21 +31,12 @@ const PRODUCTS = [
     discount: 0
   },
 ];
-  
-const KEYS = {
-  products: 'products',
-  cart: 'cart',
-};
 
-const CART : any = [];
+const CART: ICart[] = [];
 
-setData('keys', KEYS);
-
-// const KEYS = getData('keys', {});
-
-setData(KEYS.products, PRODUCTS);
-if(!getData(KEYS.cart, null)) {
-  setData(KEYS.cart, CART);
+setData(LS_KEYS.PRODUCTS, PRODUCTS);
+if(!getData(LS_KEYS.CART, null)) {
+  setData(LS_KEYS.CART, CART);
 }
 
   

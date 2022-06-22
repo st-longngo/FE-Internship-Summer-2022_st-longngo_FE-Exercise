@@ -15,7 +15,7 @@ export interface ICart {
   quantity: number;
 }
 
-export interface IKey {
-  key: string,
-  value: string
+export enum LS_KEYS {
+  CART = 'cart',
+  PRODUCTS = 'products'
 }
