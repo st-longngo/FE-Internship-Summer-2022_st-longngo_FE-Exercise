@@ -8,8 +8,9 @@ window.addEventListener('DOMContentLoaded', function () {
 });
 var renderListCart = function () {
     cart = getData(keyList.cart, []);
+    cartLists.innerHTML = "\n    <li class=\"cart-row\">\n      <span class=\"txt-bold cart-body\">PRODUCT</span>\n      <span class=\"txt-bold cart-buttons\">QUANTITY</span>\n      <span class=\"txt-center txt-bold cart-total\">TOTAL</span>\n      <span class=\"cart-close\"></span>\n    </li>";
     if (cart.length > 0) {
-        cartLists.innerHTML = cart.map(function (item) {
+        cartLists.innerHTML += cart.map(function (item) {
             return "<li class='cart'> \n        <div class='cart-body'> \n          <div class='cart-image'> \n            <img src= ".concat(item.image, " alt=").concat(item.name, "/> \n          </div> \n          <div class='cart-content'> \n            <h4 class='typo-2 txt-light cart-name'>").concat(item.name, "</h4> \n            <span class='txt-regular cart-price'>$").concat(formatFixed(item.price - (item.price * item.discount / 100)), "</span> \n            ").concat((item.discount ? "<span class='txt-regular cart-discount'>$ ".concat(item.price, "</span>") : ' '), " \n          </div> \n        </div> \n        <div class='cart-buttons' data-id=").concat(item.id, "> \n          <button class='cart-btn' id='minus'> \n            <i class='bx bx-minus'></i> \n          </button> \n          <input type='text' class='cart-quantity' value=").concat(item.quantity, "> \n          <button class='cart-btn' id='add'> \n            <i class='bx bx-plus'></i> \n          </button> \n        </div> \n        <p class='txt-center cart-total'>$ \n        ").concat(formatFixed((item.price - (item.price * item.discount / 100)) * item.quantity), "\n        </p> \n        <button id='cart-close' class='cart-btn cart-close' data-id=").concat(item.id, "> \n          <i class='bx bx-x'></i> \n        </button> \n      </li> ");
         }).join('');
         orderLists.innerHTML = cart.map(function (item) {
@@ -20,7 +21,7 @@ var renderListCart = function () {
         }, 0)));
     }
     else {
-        cartLists.innerHTML = "<div class='error'>\n        <div class='error-image'>\n          <img src='./images/error-image.png' alt='Error 404' />\n        </div>\n        <a href='index.html' class='btn btn-secondary'>Back home</a>\n      </div>";
+        cartLists.innerHTML += "<div class='error'>\n        <div class='error-image'>\n          <img src='./images/error-image.png' alt='Error 404' />\n        </div>\n        <a href='index.html' class='btn btn-secondary'>Back home</a>\n      </div>";
         orderLists.innerHTML = "<li><p>Kh\u00F4ng c\u00F3 s\u1EA3n ph\u1EA9m trong gi\u1ECF h\u00E0ng</p></li>";
         total.innerHTML = '$0';
     }
@@ -53,12 +54,12 @@ var addEventChangeOfCart = function () {
         });
     });
     listInputQuantity.forEach(function (item) {
-        // item.addEventListener('keypress', (e : any) => {
-        //   return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
-        // }
+        item.onkeypress = function (e) {
+            return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
+        };
         item.addEventListener('change', function (e) {
             var idCart = item.parentElement.dataset.id;
-            changeQuantityOfCart('change', idCart, e.target.value);
+            changeQuantityOfCart('change', idCart, Number(e.target.value));
         });
     });
 };
@@ -80,6 +81,7 @@ var changeQuantityOfCart = function (action, id, value) {
             }
             break;
         case 'change':
+            console.log('hello');
             if (value)
                 cart[cartIndex].quantity = value;
             else {

@@ -11,8 +11,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const renderListCart = () : void => {
   cart = getData(keyList.cart, []);
+  cartLists.innerHTML = `
+    <li class="cart-row">
+      <span class="txt-bold cart-body">PRODUCT</span>
+      <span class="txt-bold cart-buttons">QUANTITY</span>
+      <span class="txt-center txt-bold cart-total">TOTAL</span>
+      <span class="cart-close"></span>
+    </li>`;
   if(cart.length > 0) {
-    cartLists.innerHTML = cart.map((item : ICart) => {
+    cartLists.innerHTML += cart.map((item : ICart) => {
       return `<li class='cart'> 
         <div class='cart-body'> 
           <div class='cart-image'> 
@@ -51,7 +58,7 @@ const renderListCart = () : void => {
       acc + ((item.price - (item.price * item.discount / 100)) * item.quantity),0))
     }`
   } else {
-    cartLists.innerHTML = `<div class='error'>
+    cartLists.innerHTML += `<div class='error'>
         <div class='error-image'>
           <img src='./images/error-image.png' alt='Error 404' />
         </div>
@@ -92,17 +99,17 @@ const addEventChangeOfCart = () : void => {
     })
   })
   listInputQuantity.forEach((item: HTMLElement) => {
-    // item.addEventListener('keypress', (e : any) => {
-    //   return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
-    // }
+    item.onkeypress = (e : any) => {
+      return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
+    }
     item.addEventListener('change', (e : any) => {
       const idCart = item.parentElement.dataset.id;
-      changeQuantityOfCart('change', idCart, e.target.value);
+      changeQuantityOfCart('change', idCart, Number(e.target.value));
     })
   })
 }
 
-const changeQuantityOfCart = (action : string, id: string, value : any = null) : void => {
+const changeQuantityOfCart = (action : string, id: string, value : number = null) : void => {
   cart = getData(keyList.cart, []);
   const productCart = cart.find((item : ICart) => item.id === id);
   const cartIndex = cart.indexOf(productCart);
@@ -118,6 +125,7 @@ const changeQuantityOfCart = (action : string, id: string, value : any = null) :
       }
       break;
     case 'change':
+      console.log('hello')
       if(value) cart[cartIndex].quantity = value;
       else {
         cart = cart.filter((item : ICart) => item.id !== id);

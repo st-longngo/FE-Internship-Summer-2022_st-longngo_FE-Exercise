@@ -32,8 +32,8 @@ const PRODUCTS = [
 ];
   
 const KEYS = {
-    products: 'products',
-    cart: 'cart',
+  products: 'products',
+  cart: 'cart',
 };
 
 const CART : any = [];

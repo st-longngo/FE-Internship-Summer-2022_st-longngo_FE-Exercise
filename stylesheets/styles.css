@@ -332,12 +332,13 @@ h3 {
 .cart {
   display: flex;
   align-items: center;
-  border-top: 1px solid #a8a8a8;
+  border-bottom: 1px solid #a8a8a8;
   padding: 30px 10px;
 }
 .cart-row {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid #a8a8a8;
 }
 .cart-title {
   margin-bottom: 32px;

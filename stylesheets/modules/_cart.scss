@@ -1,10 +1,11 @@
 .cart {
   @include flex($items: center);
-  border-top: 1px solid map-get($color, 'gray-4');
+  border-bottom: 1px solid map-get($color, 'gray-4');
   padding: 30px 10px;
   &-row {
     display: flex;
     align-items: center;
+    border-bottom: 1px solid map-get($color, 'gray-4');
   }
   &-title {
     margin-bottom: 32px;

@@ -3,6 +3,7 @@
     "target": "es5",
     "module": "es6",
     "moduleResolution": "node",
+    "outDir": "../js",
     "watch": true,
     "allowJs": true,
     "noImplicitAny": true
