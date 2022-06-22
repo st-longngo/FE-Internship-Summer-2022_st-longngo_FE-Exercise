@@ -1,0 +1,67 @@
+.cart {
+  @include flex($items: center);
+  border-bottom: 1px solid map-get($color, 'gray-4');
+  padding: 30px 10px;
+  &-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid map-get($color, 'gray-4');
+  }
+  &-title {
+    margin-bottom: 32px;
+    font-size: map-get($font-size, 'lg');
+  }
+  &-body {
+    @include flex($items: center);
+    flex: 1;
+  }
+  &-image {
+    @include size(80px, 100px);
+    margin-right: 12px;
+    img {
+      @include size(100%, 100%);
+      object-fit: cover;
+    }
+  }
+  &-price {
+    font-size: map-get($font-size, 'md-2');
+  }
+  &-discount {
+    color: map-get($color, 'gray-4');
+    text-decoration: line-through;
+  }
+  &-buttons {
+    display: flex;
+    gap: 0 6px;
+    width: 18%;
+    justify-content: center;
+  }
+  &-quantity {
+    width: 30px;
+    text-align: center;
+    border: 1px solid map-get($color, 'gray-4');
+  }
+  &-btn {
+    @include flex($content: center, $items: center);
+    font-size: map-get($font-size, 'md-2');
+  }
+  &-total {
+    width: 18%;
+  }
+  &-close {
+    background-color: transparent;
+    font-size: map-get($font-size, 'md-3');
+    width: 18%;
+  }
+}
+
+@include maxWidth($mobile) {
+  .cart {
+    &-price {
+      font-size: map-get($font-size, 'xs');
+    }
+    &-total {
+      font-size: map-get($font-size, 'xs');
+    }
+  }
+}
