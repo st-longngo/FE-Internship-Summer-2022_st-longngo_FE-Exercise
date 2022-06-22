@@ -1,6 +1,6 @@
 import { getData, keyList, renderCartNumberOfListProduct, products, formatFixed, setData } from './common.js';
 import { IProduct, ICart } from './interface.js';
-const productLists = document.querySelectorAll('.js-product-list');
+const productLists = document.querySelectorAll('.js-product-list') as NodeListOf<HTMLElement>;
 let cart : ICart[] = getData(keyList.cart, []);
 
 window.addEventListener('DOMContentLoaded', function(e) {
@@ -36,7 +36,7 @@ const renderProduct = () : void => {
       </div>
     </li>`;;
   }).join(' ');
-  productLists.forEach((productList : any) => {
+  productLists.forEach((productList : HTMLElement) => {
     productList.innerHTML = listProduct;
   });
 }
