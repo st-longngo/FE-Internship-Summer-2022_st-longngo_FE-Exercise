@@ -1,7 +1,7 @@
 import { getData, keyList, renderCartNumberOfListProduct, products, formatFixed, setData } from './common.js';
 import { IProduct, ICart } from './interface.js';
-const productLists = document.querySelectorAll('.product-list');
-let cart = getData(keyList.cart, []);
+const productLists = document.querySelectorAll('.js-product-list');
+let cart : ICart[] = getData(keyList.cart, []);
 
 window.addEventListener('DOMContentLoaded', function(e) {
   renderCartNumberOfListProduct();
@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', function(e) {
 });
 
 const renderProduct = () : void => {
-  const listProduct = products.map((item : IProduct) => {
+  const listProduct : string = products.map((item : IProduct) => {
     return `<li class='col-3 col-sm-6'>
       <div class='product ${item.discount ? `product-sale` : ``}'>
         <div class='product-thumnail'>
@@ -19,7 +19,7 @@ const renderProduct = () : void => {
               <img src=${item.image} alt=${item.name} class='product-image' />
           </a>
           <div class='product-cart'>
-              <button class='btn btn-secondary btn-cart' data-id=${item.id}>add to cart</button>
+              <button class='btn btn-secondary btn-cart js-add-product' data-id=${item.id}>add to cart</button>
           </div>
         </div>
         <div class='product-content'>
@@ -42,7 +42,7 @@ const renderProduct = () : void => {
 }
 
 const addEventToProduct = () :void => {
-  const cartBtns = document.querySelectorAll('.btn-cart') as NodeListOf<HTMLElement>;
+  const cartBtns = document.querySelectorAll('.js-add-product') as NodeListOf<HTMLElement>;
   cartBtns.forEach((item : HTMLElement) => {
     item.addEventListener('click', () => {
       addCart(item.dataset.id!);
@@ -53,10 +53,10 @@ const addEventToProduct = () :void => {
 const addCart = (id: string) : void => {
   cart = getData(keyList.cart, []);
 
-  const product = products.find((item: IProduct) => item.id === id);
-  const productCart = cart.find((item: ICart) => item.id === id);
+  const product : IProduct = products.find((item: IProduct) => item.id === id);
+  const productCart : ICart = cart.find((item: ICart) => item.id === id);
   if (!productCart) {
-    const newProductCart = { ...product, quantity: 1 };
+    const newProductCart : ICart = { ...product, quantity: 1 };
     cart.push(newProductCart);
   } else {
     cart[cart.indexOf(productCart)].quantity += 1;

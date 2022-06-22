@@ -14,3 +14,8 @@ export interface ICart {
   discount: number;
   quantity: number;
 }
+
+export interface IKey {
+  key: string,
+  value: string
+}

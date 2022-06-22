@@ -1,9 +1,9 @@
 import { getData, setData, keyList, formatFixed, renderCartNumberOfListProduct } from './common.js';
 import { ICart } from './interface.js';
 let cart = getData(keyList.cart, []);
-const cartLists = document.getElementById('cart-list') as HTMLElement;
-const orderLists = document.getElementById('order-list') as HTMLElement;
-const total = document.getElementById('total') as HTMLElement;
+const cartLists = document.getElementById('js-cart-list') as HTMLElement;
+const orderLists = document.getElementById('js-order-list') as HTMLElement;
+const total = document.getElementById('js-total') as HTMLElement;
 
 window.addEventListener('DOMContentLoaded', () => {
   updateListCart();
@@ -32,18 +32,18 @@ const renderListCart = () : void => {
           </div> 
         </div> 
         <div class='cart-buttons' data-id=${item.id}> 
-          <button class='cart-btn' id='minus'> 
+          <button class='cart-btn js-minus-cart' id='minus'> 
             <i class='bx bx-minus'></i> 
           </button> 
-          <input type='text' class='cart-quantity' value=${item.quantity}> 
-          <button class='cart-btn' id='add'> 
+          <input type='text' class='cart-quantity js-input-cart' value=${item.quantity}> 
+          <button class='cart-btn js-add-cart' id='add'> 
             <i class='bx bx-plus'></i> 
           </button> 
         </div> 
         <p class='txt-center cart-total'>$ 
         ${formatFixed((item.price - (item.price * item.discount / 100)) * item.quantity)}
         </p> 
-        <button id='cart-close' class='cart-btn cart-close' data-id=${item.id}> 
+        <button id='cart-close' class='cart-btn cart-close js-delete-cart' data-id=${item.id}> 
           <i class='bx bx-x'></i> 
         </button> 
       </li> `
@@ -53,7 +53,7 @@ const renderListCart = () : void => {
         <h4 class='txt-light order-name'>${item.name}</h4>
         <div class='txt-bold order-quantity'>x${item.quantity}</div>
       </li>`
-    }).join(' ');
+    }).join('');
     total.innerHTML = `$${formatFixed(cart.reduce((acc : number, item : ICart) => 
       acc + ((item.price - (item.price * item.discount / 100)) * item.quantity),0))
     }`
@@ -76,20 +76,20 @@ const updateListCart = () : void => {
 }
 
 const addEventChangeOfCart = () : void => {
-  const addBtns = document.querySelectorAll('#add') as NodeListOf<HTMLElement>;
-  const minusBtns = document.querySelectorAll('#minus') as NodeListOf<HTMLElement>;
-  const closeBtns = document.querySelectorAll('#cart-close')  as NodeListOf<HTMLElement>;
-  const listInputQuantity = document.querySelectorAll('.cart-quantity') as NodeListOf<HTMLElement>;
+  const addBtns = document.querySelectorAll('.js-add-cart') as NodeListOf<HTMLElement>;
+  const minusBtns = document.querySelectorAll('.js-minus-cart') as NodeListOf<HTMLElement>;
+  const closeBtns = document.querySelectorAll('.js-delete-cart')  as NodeListOf<HTMLElement>;
+  const listInputQuantity = document.querySelectorAll('.js-input-cart') as NodeListOf<HTMLElement>;
 
   addBtns.forEach((item : HTMLElement) => {
     item.addEventListener('click', () => {
-      var idCart = item.parentElement.dataset.id;
+      const idCart : string = item.parentElement.dataset.id;
       changeQuantityOfCart('add', idCart);
     })
   })
   minusBtns.forEach((item : HTMLElement) => {
     item.addEventListener('click', () => {
-      var idCart = item.parentElement.dataset.id;
+      const idCart : string = item.parentElement.dataset.id;
       changeQuantityOfCart('minus', idCart);
     })
   })
@@ -99,20 +99,20 @@ const addEventChangeOfCart = () : void => {
     })
   })
   listInputQuantity.forEach((item: HTMLElement) => {
-    item.onkeypress = (e : any) => {
+    item.addEventListener('keypress', (e : any) => {
       return (e.charCode == 8 || e.charCode == 0 || e.charCode == 13) ? null : e.charCode >= 48 && e.charCode <= 57;
-    }
+    });
     item.addEventListener('change', (e : any) => {
-      const idCart = item.parentElement.dataset.id;
+      const idCart : string = item.parentElement.dataset.id;
       changeQuantityOfCart('change', idCart, Number(e.target.value));
-    })
+    });
   })
 }
 
 const changeQuantityOfCart = (action : string, id: string, value : number = null) : void => {
   cart = getData(keyList.cart, []);
-  const productCart = cart.find((item : ICart) => item.id === id);
-  const cartIndex = cart.indexOf(productCart);
+  const productCart : ICart = cart.find((item : ICart) => item.id === id);
+  const cartIndex : number = cart.indexOf(productCart);
   switch (action) {
     case 'add':
       cart[cartIndex].quantity += 1;
@@ -125,7 +125,6 @@ const changeQuantityOfCart = (action : string, id: string, value : number = null
       }
       break;
     case 'change':
-      console.log('hello')
       if(value) cart[cartIndex].quantity = value;
       else {
         cart = cart.filter((item : ICart) => item.id !== id);
@@ -140,7 +139,7 @@ const changeQuantityOfCart = (action : string, id: string, value : number = null
 
 const deleteCartOfProductList = (id : string) : void => {
   cart = getData(keyList.cart, []);
-  const newCart = cart.filter((item : ICart) => item.id !== id);
+  const newCart : ICart[] = cart.filter((item : ICart) => item.id !== id);
   setData(keyList.cart, newCart);
   updateListCart();
 }

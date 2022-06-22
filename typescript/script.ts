@@ -3,7 +3,7 @@ const menu = document.querySelector('.nav') as HTMLElement;
 const header = document.getElementById('header') as HTMLElement;
 
 window.onscroll = () => {
-  if (window.scrollY > header.offsetTop) {
+  if (window.scrollY > header.offsetTop + 90) {
     header.classList.add('sticky');
   } else {
     header.classList.remove('sticky');

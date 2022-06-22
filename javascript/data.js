@@ -1,5 +1,5 @@
 import { setData, getData } from './common.js';
-var PRODUCTS = [
+const PRODUCTS = [
     {
         id: '1',
         name: 'T-Shirt Summer Vibes',
@@ -29,11 +29,11 @@ var PRODUCTS = [
         discount: 0
     },
 ];
-var KEYS = {
+const KEYS = {
     products: 'products',
     cart: 'cart',
 };
-var CART = [];
+const CART = [];
 setData('keys', KEYS);
 // const KEYS = getData('keys', {});
 setData(KEYS.products, PRODUCTS);
