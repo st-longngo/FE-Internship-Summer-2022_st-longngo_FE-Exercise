@@ -5,5 +5,8 @@
 // Ex: ([1, 2, 3, 4, 5, 6, 7], 3) => 9
 
 function sumOrdered(arr, num) {
-  return arr.filter((ele, idx) => (idx + 1) % num === 0).reduce((a, b) => a + b);
+  return arr.reduce((a, b, idx) => {
+    if ((idx + 1) % num === 0) a += b;
+    return a;
+  }, 0);
 }
